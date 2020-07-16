@@ -1,2 +1,7 @@
 @import './bootstrap_hux.scss';
 @import './bootstrap/bootstrap.scss';
+
+button.btn {
+  padding: 1rem;
+  font-weight: 600;
+}
