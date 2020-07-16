@@ -20,7 +20,6 @@ build/
 src/assets/
 
 # картинки шрифты итп
-!src/scss/components/bootstrap
-src/scss/components/bootstrap/*
-!src/scss/components/bootstrap/bootstrap.scss
-!src/scss/components/bootstrap/_variables.scss
+!src/scss/bootstrap
+src/scss/bootstrap/*
+!src/scss/bootstrap/bootstrap.scss

@@ -1,0 +1,18 @@
+.bd-callout {
+  border: solid 0 transparent;
+  border-left-width: 0.2rem;
+}
+
+
+
+$main:#00b4e3 !default;
+
+$theme-colors: (
+  'main': $main,
+);
+
+@each $color, $value in $theme-colors {
+  .bd-callout-#{$color} {
+    border-left-color: $value;
+  }
+}
