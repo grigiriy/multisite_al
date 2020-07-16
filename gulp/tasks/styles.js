@@ -11,9 +11,9 @@ module.exports = function pug2html(cb) {
   return gulp
     .src([
       'src/scss/media.scss',
-      'src/scss/fonts.scss',
       'src/scss/main.scss',
-      'src/scss/components/*.scss'
+      'src/scss/fonts.scss',
+      'src/scss/components/*.scss',
     ])
     .pipe(plumber())
     .pipe(sass())
