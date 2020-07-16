@@ -18,6 +18,7 @@ build/
 
 # картинки шрифты итп
 src/assets/
+src/js/plugins/
 
 # картинки шрифты итп
 !src/scss/bootstrap
