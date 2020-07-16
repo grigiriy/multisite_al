@@ -2,10 +2,13 @@
   border: solid 0 transparent;
   border-left-width: 0.2rem;
 }
+hr.lil-hr {
+  width: 60px;
+  height: 0.2rem;
+  border: none;
+}
 
-
-
-$main:#00b4e3 !default;
+$main: #00b4e3 !default;
 
 $theme-colors: (
   'main': $main,
@@ -14,5 +17,8 @@ $theme-colors: (
 @each $color, $value in $theme-colors {
   .bd-callout-#{$color} {
     border-left-color: $value;
+  }
+  hr.lil-hr-#{$color} {
+    background-color: $value;
   }
 }
