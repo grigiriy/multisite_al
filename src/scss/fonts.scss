@@ -39,13 +39,11 @@
   color: #3b3d46;
 }
 
-h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-.h1,
 .h2,
 .h3,
 .h4,
@@ -61,4 +59,10 @@ h1,
 .h1 {
   font-size: 3rem;
   line-height: 3.6rem;
+  font-weight: bold;
+}
+h2,
+.h2 {
+  font-size: 2.6rem;
+  line-height: 3.1rem;
 }
