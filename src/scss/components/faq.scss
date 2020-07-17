@@ -1,0 +1,24 @@
+@import '../bootstrap_hux.scss';
+#faq {
+  button {
+    font-size: 18px;
+    font-weight: 600;
+    &[aria-expanded='true'] {
+      color: $main;
+    }
+    div {
+      line-height: 1;
+    }
+    span {
+      align-self: center;
+    }
+  }
+  .collapsing,
+  .collapse {
+    margin-top: -0.5rem;
+
+    div {
+      padding-left: 7.5rem !important;
+    }
+  }
+}

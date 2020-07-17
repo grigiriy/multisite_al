@@ -1,25 +1,7 @@
-.bd-callout {
-  border: solid 0 transparent;
-  border-left-width: 0.15rem;
-}
-hr.lil-hr {
-  width: 60px;
-  height: 0.15rem;
-  border: none;
-  margin: 1.5rem auto;
-}
-
 $main: #00b4e3 !default;
+$lightblue: #f1f7f8 !default;
 
 $theme-colors: (
   'main': $main,
+  'lightblue': $lightblue,
 );
-
-@each $color, $value in $theme-colors {
-  .bd-callout-#{$color} {
-    border-left-color: $value;
-  }
-  hr.lil-hr-#{$color} {
-    background-color: $value;
-  }
-}
