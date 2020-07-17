@@ -24,3 +24,12 @@ button.btn {
 .rounded-xl {
   border-radius: 0.5rem !important;
 }
+.subcard {
+  min-width: 70px;
+  height: 70px;
+  padding: 15px;
+  text-align: center;
+  + p {
+    align-self: center;
+  }
+}

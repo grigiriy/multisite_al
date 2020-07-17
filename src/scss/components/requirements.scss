@@ -1,0 +1,19 @@
+#requirements {
+  h2 {
+    max-width: 600px;
+  }
+  ul {
+    li {
+      margin: 1rem 0;
+      padding-left: 5px;
+      list-style-type: none;
+      &:before {
+        content: '·';
+        font-size: 50px;
+        position: absolute;
+        line-height: 25px;
+        margin-left: -20px;
+      }
+    }
+  }
+}
