@@ -19,6 +19,23 @@ button.btn {
 .form-control {
   height: 3.5rem;
   border-color: #e6e6e6;
+  padding: 1rem;
+  &::-webkit-input-placeholder {
+    color: #3b3d46;
+    opacity: 0.6;
+  }
+  &::-moz-placeholder {
+    color: #3b3d46;
+    opacity: 0.6;
+  } /* Firefox 19+ */
+  &:-moz-placeholder {
+    color: #3b3d46;
+    opacity: 0.6;
+  } /* Firefox 18- */
+  &:-ms-input-placeholder {
+    color: #3b3d46;
+    opacity: 0.6;
+  }
 }
 
 .rounded-xl {
