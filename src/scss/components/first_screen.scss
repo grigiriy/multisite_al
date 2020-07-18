@@ -12,6 +12,12 @@
   }
   img {
     max-width: 900px;
+    @include media-tablet_portrait-max {
+      height: 400px;
+    }
+    @include media-mobile_default-max {
+      margin-left: -10vw;
+    }
   }
   svg {
     width: 40px;
