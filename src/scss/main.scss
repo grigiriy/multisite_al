@@ -1,5 +1,73 @@
 @import './bootstrap_hux.scss';
 @import './bootstrap/bootstrap.scss';
+@import './fonts.scss';
+@import './media.scss';
+@import './components/advantages.scss';
+@import './components/big_form.scss';
+@import './components/bottom_cta.scss';
+@import './components/bottom_form.scss';
+@import './components/calc.scss';
+@import './components/faq.scss';
+@import './components/first_screen.scss';
+@import './components/footer.scss';
+@import './components/header_nav.scss';
+@import './components/horisontal_form.scss';
+@import './components/requirements.scss';
+@import './components/steps.scss';
+@import './components/terms.scss';
+@import './components/types.scss';
+
+body {
+  font-family: Gilroy, Arial, -apple-system !important;
+  color: #3b3d46;
+
+  @include media-tablet_portrait-max {
+    font-size: 0.8rem;
+    line-height: 1.4rem;
+  }
+}
+h2,
+h3,
+h4,
+h5,
+h6,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: 600;
+}
+.text-dashed {
+  border-bottom: dashed 1px;
+}
+
+h1,
+.h1 {
+  font-size: 3rem;
+  line-height: 3.6rem;
+  font-weight: bold;
+  @include media-tablet_portrait-max {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+h2,
+.h2 {
+  font-size: 2.6rem;
+  line-height: 3.1rem;
+}
+.subtitle {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+.smaller {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+}
+.semibold {
+  font-weight: 600;
+}
 
 a {
   &:hover {

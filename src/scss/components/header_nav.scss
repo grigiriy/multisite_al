@@ -1,5 +1,12 @@
-.logo {
-  img {
-    width: 200px;
+// @import '../media.scss';
+nav.navbar {
+  .logo {
+    img {
+      width: 200px;
+    }
+  }
+  @include media-tablet_portrait-max {
+    height: 70px;
+    overflow: hidden;
   }
 }

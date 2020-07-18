@@ -1,8 +1,14 @@
 footer {
   .phone {
     font-size: 2rem;
+    margin-left: -2.5rem;
   }
   li {
     padding: 7px 0;
+  }
+  .logo {
+    img {
+      max-width: 200px;
+    }
   }
 }
