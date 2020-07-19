@@ -7,11 +7,17 @@
       margin: 1rem 0;
       padding-left: 5px;
       list-style-type: none;
+      @include media-tablet_portrait-max {
+        font-size: 0.8rem;
+      }
       &:before {
         content: '·';
         font-size: 50px;
         position: absolute;
         line-height: 25px;
+        @include media-tablet_portrait-max {
+          line-height: 1.2rem;
+        }
         margin-left: -20px;
       }
     }
