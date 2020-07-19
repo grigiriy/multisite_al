@@ -1,12 +1,12 @@
 // @import '../media.scss';
 nav.navbar {
+  flex-wrap: nowrap;
   .logo {
     img {
-      width: 200px;
+      width: 10rem;
     }
   }
-  @include media-tablet_portrait-max {
-    height: 70px;
-    overflow: hidden;
+  .nav-item {
+    padding: 0 10px;
   }
 }
