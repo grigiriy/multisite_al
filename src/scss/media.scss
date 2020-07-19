@@ -48,6 +48,11 @@ $mediaDesktop-min: 1200px;
     @content;
   }
 }
+@mixin media-tablet_landscape-max {
+  @media (max-width: $mediaTablet_landscape-max) {
+    @content;
+  }
+}
 
 @mixin media-mobile_plus__tablet_portrait-range {
   @media (min-width: $mediaMobile_plus-min) and (max-width: $mediaTablet_portrait-max) {

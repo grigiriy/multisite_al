@@ -47,16 +47,34 @@ $('#advantages')
         settings: 'unslick',
       },
       {
-        breakpoint: 768,
+        breakpoint: 540,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
+          initialSlide: 1,
         },
+      },
+    ],
+  });
+
+$('#steps')
+  .find('.slick')
+  .slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    mobileFirst: true,
+    slidesToScroll: 1,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: 'unslick',
       },
       {
         breakpoint: 540,
         settings: {
           slidesToShow: 2,
-          initialSlide: 1,
         },
       },
     ],
