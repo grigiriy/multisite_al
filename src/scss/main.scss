@@ -122,6 +122,9 @@ hr.lil-hr {
 button.btn {
   padding: 1rem;
   font-weight: 600;
+  @include media-mobile_small-max {
+    font-size: 0.9rem;
+  }
 }
 
 .form-control {
