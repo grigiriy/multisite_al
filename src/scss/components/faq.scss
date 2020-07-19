@@ -1,24 +1,41 @@
 @import '../bootstrap_hux.scss';
 #faq {
-  button {
+  div.d-flex {
     font-size: 18px;
     font-weight: 600;
+    padding: 1rem;
+    cursor: pointer;
     &[aria-expanded='true'] {
       color: $main;
     }
     div {
-      line-height: 1;
+      line-height: 0;
     }
     span {
+      line-height: 1.8rem;
       align-self: center;
+      @include media-tablet_portrait-max {
+        line-height: 1.6rem !important;
+        font-size: 1rem;
+      }
+    }
+  }
+  svg {
+    @include media-tablet_portrait-max {
+      width: 15px;
+      height: 15px;
     }
   }
   .collapsing,
   .collapse {
     margin-top: -0.5rem;
 
-    div {
-      padding-left: 7.5rem !important;
+    p {
+      padding-left: 5.5rem !important;
+      @include media-tablet_portrait-max {
+        padding-left: 1rem !important;
+        font-size: 0.8rem;
+      }
     }
   }
 }
