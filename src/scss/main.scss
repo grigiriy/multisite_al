@@ -144,6 +144,9 @@ button.btn {
     color: #3b3d46;
     opacity: 0.6;
   }
+  @include media-tablet_portrait-max {
+    font-size: 0.8rem;
+  }
 }
 
 .rounded-xl {
