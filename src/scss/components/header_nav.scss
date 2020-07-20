@@ -1,0 +1,12 @@
+// @import '../media.scss';
+nav.navbar {
+  flex-wrap: nowrap;
+  .logo {
+    img {
+      width: 10rem;
+    }
+  }
+  .nav-item {
+    padding: 0 10px;
+  }
+}

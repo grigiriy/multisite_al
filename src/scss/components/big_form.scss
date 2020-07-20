@@ -1,0 +1,10 @@
+#big_form {
+  h2 {
+    max-width: 400px;
+  }
+  @include media-tablet_portrait-max {
+    .rounded-xl {
+      border-radius: 0 !important;
+    }
+  }
+}

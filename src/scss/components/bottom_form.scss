@@ -1,0 +1,28 @@
+#bottom_form {
+  h2 {
+    max-width: 350px;
+  }
+  img {
+    margin-bottom: -175px;
+  }
+  .subtitle {
+    max-width: 500px;
+  }
+  button.btn {
+    @include media-tablet_portrait-max {
+      padding: 0.7rem 1rem;
+      line-height: 1.2rem;
+      @include media-mobile_small-max {
+        line-height: 1rem;
+      }
+    }
+  }
+  @each $color, $value in $theme-colors {
+    .bd-callout-#{$color} {
+      border-left-color: $value;
+      @include media-mobile_default-max {
+        border-left-color: transparent;
+      }
+    }
+  }
+}

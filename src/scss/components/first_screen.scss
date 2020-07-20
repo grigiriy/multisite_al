@@ -1,0 +1,31 @@
+#first-screen {
+  background: linear-gradient(
+      180deg,
+      #ffffff 43.21%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #f1f7f8;
+  @include media-tablet_portrait-max {
+    p {
+      font-size: 0.8rem;
+      line-height: 1.4rem;
+    }
+  }
+  min-height: 60vh;
+  h1 {
+    margin-top: 8vh;
+  }
+  img {
+    max-width: 900px;
+    @include media-tablet_portrait-max {
+      height: 400px;
+    }
+    @include media-mobile_default-max {
+      margin-left: -10vw;
+    }
+  }
+  svg {
+    width: 40px;
+    height: 40px;
+  }
+}
