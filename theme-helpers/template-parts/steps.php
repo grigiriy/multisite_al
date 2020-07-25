@@ -2,7 +2,7 @@
     <div class="container mx-auto my-5">
         <div class="row">
             <div class="col-12 text-center">
-                <h2>Как быстро получить займ под залог ПТС</h2>
+                <h2 class="mx-auto">Процесс оформления и получения кредита в ломбарде АвтоЗалог24</h2>
                 <hr class="lil-hr lil-hr-main">
                 <p class="subtitle">Четыре шага для получения займа</p>
             </div>
@@ -11,7 +11,7 @@
             <div class="col d-flex">
                 <div
                     class="overflow-hidden mb-3 position-relative mr-5 mr-md-3 rounded-xl shadow p-4 bg-white d-flex flex-column">
-                    <img class="mt-3" src="img/steps_1.png" alt="">
+                    <img class="mt-3" src="<?= get_with_path('img/steps_1.png"');?> alt="">
                     <div class="half-circle-angle"><span class="h1">01</span></div>
                     <p class="text-nowrap pt-4 semibold subtitle">Оставляете заявку</p>
                     <p>Позвоните или заполните форму на сайте и получите одобрение</p>
@@ -44,7 +44,7 @@
             <div class="col d-flex">
                 <div
                     class="overflow-hidden mb-3 position-relative mr-5 mr-md-3 rounded-xl shadow p-4 bg-white d-flex flex-column">
-                    <img class="mt-3" src="img/steps_2.png" alt="">
+                    <img class="mt-3" src="<?= get_with_path('img/steps_2.png"');?> alt="">
                     <div class="half-circle-angle"><span class="h1">02</span></div>
                     <p class="text-nowrap pt-4 semibold subtitle">Оцениваем автомобиль</p>
                     <p>Приезжаете в офис для оценки и проверки вашего автомобиля</p>
@@ -76,7 +76,7 @@
             <div class="col d-flex">
                 <div
                     class="overflow-hidden mb-3 position-relative mr-5 mr-md-3 rounded-xl shadow p-4 bg-white d-flex flex-column">
-                    <img class="mt-3" src="img/steps_3.png" alt="">
+                    <img class="mt-3" src="<?= get_with_path('img/steps_3.png"');?> alt="">
                     <div class="half-circle-angle"><span class="h1">03</span></div>
                     <p class="text-nowrap pt-4 semibold subtitle">Заключаем договор</p>
                     <p>Мы оформляем с вами договор займа и залога </p>
@@ -108,7 +108,7 @@
             <div class="col d-flex">
                 <div
                     class="overflow-hidden mb-3 position-relative mr-5 mr-md-3 rounded-xl shadow p-4 bg-white d-flex flex-column">
-                    <img class="mt-3" src="img/steps_4.png" alt="">
+                    <img class="mt-3" src="<?= get_with_path('img/steps_4.png"');?> alt="">
                     <div class="half-circle-angle"><span class="h1">04</span></div>
                     <p class="text-nowrap pt-4 semibold subtitle">Получаете деньги</p>
                     <p>Наличными или на карту, а вы продолжаете пользоваться авто</p>

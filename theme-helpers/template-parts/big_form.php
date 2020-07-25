@@ -3,7 +3,7 @@
         <div class="p-3 p-lg-5 bg-white rounded-xl">
             <div class="row mb-lg-5">
                 <div class="col-12 col-lg-6">
-                    <h2>Займ под залог ПТС — 100% одобрение</h2>
+                    <h2>Заявка на займ в московский филиал</h2>
                     <hr class="d-block d-lg-none lil-hr lil-hr-main ml-0">
                 </div>
                 <div class="col-12 col-lg-6 d-flex">

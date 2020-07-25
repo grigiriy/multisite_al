@@ -3,7 +3,7 @@
         <div class="container-fluid container-md mx-auto my-lg-5 pt-5">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h2 class="mx-auto">Новые условия выдачи денег под ПТС без сдачи автомобиля</h2>
+                    <h2 class="mx-auto">Выдаем деньги под залог ПТС авто в городе Москва на Новых Условиях</h2>
                     <hr class="lil-hr lil-hr-main">
                     <p class="subtitle">Подробные условия займа и требования у заемщику и авто</p>
                 </div>

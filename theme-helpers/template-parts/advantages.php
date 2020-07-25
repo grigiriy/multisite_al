@@ -3,7 +3,7 @@
         <div class="container-fluid container-md mx-auto mb-5">
             <div class="row mt-0 mt-lg-5 mb-0 mb-lg-3 pt-5">
                 <div class="col-12 px-4 text-center">
-                    <h2 class="mx-auto">Самое выгодное кредитование под залог автомобиля в Москве</h2>
+                    <h2 class="mx-auto">Преимущества автоломбарда под ПТС АвтоЗалог24</h2>
                     <hr class="lil-hr lil-hr-main">
                     <p class="subtitle">Получите деньги под залог ПТС в автоломбарде на самых выгодных условиях</p>
                 </div>

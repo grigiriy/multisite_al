@@ -17,10 +17,23 @@ build/
 
 
 # картинки шрифты итп
-src/assets/
-src/js/plugins/
+/assets/
+/js/plugins/
 
 # картинки шрифты итп
 !src/scss/bootstrap
 src/scss/bootstrap/*
 !src/scss/bootstrap/bootstrap.scss
+src/assets/fonts/*
+src/assets/img/*
+
+/js/plugins/
+/node_modules/
+/vendor/
+/css/images/
+/css/none.css
+/db/
+/css/donor/
+/js/donor/
+
+2do.css

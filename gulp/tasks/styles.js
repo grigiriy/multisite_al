@@ -22,7 +22,7 @@ module.exports = function pug2html(cb) {
         cascade: false,
       })
     )
-    .pipe(concat('styles.css'))
+    .pipe(concat('main.css'))
     .pipe(shorthand())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('build/css'));
