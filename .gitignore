@@ -37,3 +37,4 @@ src/assets/img/*
 /js/donor/
 
 2do.css
+node_modules
