@@ -174,3 +174,28 @@ button.btn {
 .slick-dots li.slick-active button::before {
   color: $main;
 }
+
+.__phone:after {
+  content: '*';
+  position: absolute;
+  left: 155px;
+  @include media-tablet_portrait-max {
+    left: 135px;
+  }
+  top: 15px;
+  color: red;
+  font-size: 20px;
+}
+.__phone.__calc_phone:after {
+  top: 115px;
+  left: 205px;
+  @include media-tablet_landscape-max {
+    left: 155px;
+  }
+  @include media-tablet_portrait-max {
+    left: 135px;
+  }
+}
+.__phone.__hidden:after {
+  opacity: 0;
+}

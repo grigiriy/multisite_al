@@ -47,7 +47,7 @@
     position: absolute;
     right: 20px;
     &:before {
-      content: url(/img/arrow.svg);
+      content: url(../img/arrow.svg);
     }
     &.slick-disabled {
       opacity: 0;

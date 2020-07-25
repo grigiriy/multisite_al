@@ -28,8 +28,8 @@
                             <button class="btn btn-main w-100 mt-3" type="submit">Получить
                                 одобрение</button>
                         </div>
-                        <div class="col order-2 pr-sm-0 pr-md-3 mt-3 mt-sm-0">
-                            <input type="text" class="form-control" placeholder="+7 (___) ___-__-__">
+                        <div class="col order-2 pr-sm-0 pr-md-3 mt-3 mt-sm-0 __phone">
+                            <input type="text" class="form-control" placeholder="+7 (___) ___-__-__" name="phone">
                         </div>
                         <div class="col order-4">
                             <p class="smaller mt-3">Нажимая на кнопку, вы даете согласие на обработку ваших

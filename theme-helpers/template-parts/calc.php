@@ -60,10 +60,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="rounded-xl bg-white px-xl-5 py-3 mt-1">
-                    <div class="px-3">
+                <div class="rounded-xl bg-white px-xl-5 py-3 mt-1 position-relative">
+                    <div class="px-3 __phone __calc_phone">
                         <input type="text" class="form-control my-3" placeholder="Ваше имя">
-                        <input type="text" class="form-control my-3" placeholder="+7 (___) ___-__-__">
+                        <input type="text" class="form-control my-3" placeholder="+7 (___) ___-__-__" name="phone">
                         <button class="btn btn-main w-100 mb-3" type="submit">
                             Получить одобрение
                         </button>

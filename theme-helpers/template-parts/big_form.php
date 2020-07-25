@@ -1,5 +1,5 @@
 <section id="big_form" class="row bg-lightgrey py-lg-5">
-    <div class="container-fluid container-md mx-auto px-0 px-lg-auto my-3 my-5">
+    <div class="container-fluid container-md mx-auto px-3 px-lg-auto my-3 my-5">
         <div class="p-3 p-lg-5 bg-white rounded-xl">
             <div class="row mb-lg-5">
                 <div class="col-12 col-lg-6">
@@ -13,16 +13,24 @@
                         документам</p>
                 </div>
             </div>
-            <form class="row row-cols-1 row-cols-lg-3 mb-3">
-                <div class="col">
-                    <input type="text" class="form-control mb-3" placeholder="Ваше имя">
-                    <input type="text" class="form-control" placeholder="Модель авто">
+            <form class="row mb-3">
+                <div class="col-12 col-lg-8">
+                    <div class="row row-cols-1 row-cols-lg-2">
+                        <div class="col mb-3">
+                            <input type="text" class="form-control" placeholder="Ваше имя">
+                        </div>
+                        <div class="col mb-3 __phone">
+                            <input type="text" class="form-control" placeholder="+7 (___) ___-__-__" name="phone">
+                        </div>
+                        <div class="col mb-3 mb-lg-0">
+                            <input type="text" class="form-control" placeholder="Модель авто">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Сумма займа">
+                        </div>
+                    </div>
                 </div>
-                <div class="col pl-lg-0 pr-lg-4 mt-3 mt-lg-0">
-                    <input type="text" class="form-control mb-3" placeholder="+7 (___) ___-__-__">
-                    <input type="text" class="form-control" placeholder="Сумма займа">
-                </div>
-                <div class="col pl-lg-5 mt-3 mt-lg-0">
+                <div class="col-12 col-lg-4 pl-lg-5 mt-3 mt-lg-0">
                     <button class="w-100 btn btn-main mb-3" type="submit">Получить
                         одобрение</button>
                     <p class="smaller text-center">Нажимая на кнопку, вы даете согласие на обработку ваших
