@@ -14,5 +14,5 @@
 <link rel="stylesheet" href="<?= get_with_path('css/main.css');?>">
 
 <body>
-<div class="app">
+<div class="app container-fluid">
   <?php get_template_part('theme-helpers/template-parts/header'); ?>
