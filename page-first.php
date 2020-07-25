@@ -46,6 +46,8 @@ get_template_part('theme-helpers/template-parts/big_form');
 
 get_template_part('theme-helpers/template-parts/terms');
 
+get_template_part('theme-helpers/template-parts/requirements');
+
 get_template_part('theme-helpers/template-parts/steps');
 
 get_template_part('theme-helpers/template-parts/faq');
