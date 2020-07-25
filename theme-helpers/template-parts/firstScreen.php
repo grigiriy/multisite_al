@@ -1,8 +1,8 @@
 <section id="first-screen" class="row overflow-hidden">
     <div class="container mx-auto">
         <div class="row">
-            <div class="col-8 col-md-6 pr-0">
-                <h1>Автоломбард под залог авто ПТС в городе Москва</h1>
+            <div class="col-8 col-md-6 pr-0 pt-md-5">
+                <h1><?= get_headline($post->ID,$post->post_parent,'0') ?></h1>
                 <div class="row mt-5 mb-lg-5">
                     <div class="col-12 col-lg-6">
                         <div class="d-flex mb-2">
@@ -106,7 +106,7 @@
                 </div>
             </div>
             <div class="col-4 col-md-6">
-                <img class="my-auto mt-lg-0" src="img/car.png" alt="">
+                <img class="my-auto mt-lg-0" src="<?= get_with_path('img/car.png');?>" alt="">
             </div>
             <div class="col-12 d-flex d-lg-none mb-5">
                 <button class="btn btn-main w-100 mt-3">Отправить заявку</button>

@@ -1,3 +1,4 @@
+@import '../bootstrap_hux.scss';
 #calc {
   .input-calc {
     height: 4rem;
@@ -6,5 +7,47 @@
   }
   label {
     font-weight: 600;
+  }
+  .noUi-base,
+  .noUi-connects,
+  .noUi-horizontal {
+    height: 2px;
+    border: none;
+  }
+  .noUi-connect {
+    background-color: $main;
+  }
+  .noUi-handle:before,
+  .noUi-handle:after {
+    content: none;
+  }
+  .noUi-handle {
+    width: 25px;
+    height: 25px;
+    right: -13px;
+    top: -12px;
+    border-radius: 50%;
+    border-color: $main;
+    border-width: 6px;
+    cursor: pointer;
+  }
+  #calc_pay_range2 {
+    .noUi-connect {
+      background-color: #000;
+    }
+    .noUi-handle {
+      border-color: #000;
+    }
+  }
+  #calc_month_range {
+    .noUi-handle:before {
+      content: ' ';
+      height: 7px;
+      width: 7px;
+      background: $main;
+      border-radius: 50%;
+      top: 3px;
+      left: 3px;
+    }
   }
 }
