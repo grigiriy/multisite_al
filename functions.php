@@ -138,21 +138,17 @@ add_action(
 // print_r($result);
 // }
 
-function get_with_path($path){
-  $path = '/wp-content/themes/avtozalog/build/'.$path;
-  return $path;
-}
 
-add_action( 'carbon_fields_register_fields', 'crb_register_custom_fields' );
-function crb_register_custom_fields() {
-  include_once __DIR__ . '/theme-helpers/custom-fields/custom.php';
-}
+// add_action( 'carbon_fields_register_fields', 'crb_register_custom_fields' );
+// function crb_register_custom_fields() {
+//   include_once __DIR__ . '/theme-helpers/custom-fields/custom.php';
+// }
 
-add_action( 'after_setup_theme', 'crb_load' );
-function crb_load() {
-  require_once( 'vendor/autoload.php' );
-  \Carbon_Fields\Carbon_Fields::boot();
-}
+// add_action( 'after_setup_theme', 'crb_load' );
+// function crb_load() {
+//   require_once( 'vendor/autoload.php' );
+//   \Carbon_Fields\Carbon_Fields::boot();
+// }
 
 
 
@@ -206,31 +202,15 @@ function new_taxonomies_for_pages() {
   }
  add_action( 'init', 'new_taxonomies_for_pages' );
 
+
+
+
+
+
+
+
+
 //// перенеси потом в плагин
-function get_declension($word,$case) {
-  $dir_path = $_SERVER['DOCUMENT_ROOT'].'/wp-content/themes/avtozalog/';
-  $file_path = $dir_path.'/db/sklon.csv';
-
-  $data = kama_parse_csv_file($file_path);
-
-  $formated_word = 'error...';
-
-  foreach($data as $row){
-    if ($row[0] === $word)
-    $formated_word = $row[$case] ? $row[$case] : 'error...';
-  }
-
-  return $formated_word;
-}
-
-function get_city($post_id){
-  if( get_post_meta($post_id)['_wp_page_template'][0] !== 'main.php'){
-    $post_id = get_post($post_id)->post_parent;
-  }
-  $city = strval($post_id) === '0' ? 'Москва' : get_the_title($post_id);
-  return $city;
-}
-
 function get_city_meta($post_id,$meta){
   if( get_post_meta($post_id)['_wp_page_template'][0] !== 'main.php'){
     $post_id = (get_post($post_id)->post_parent !== 0) ? get_post($post_id)->post_parent : get_option('page_on_front');
@@ -261,29 +241,6 @@ function get_brand(){
   return get_bloginfo();
 }
 add_shortcode('brand', 'get_brand');
-
-function set_nowrap($string){
-	$string = str_replace ( '-' , '‑' , $string );
-	$string = str_replace ( ' ' , '&nbsp;' , $string );
-	return $string;
-}
-
-function get_headline($post_id,$parent_id,$case){
-  // if ( is_page_template('main.php') ) {
-  //   $headline = 'Автоломбард под залог авто ПТС в городе ' . set_nowrap(get_declension(get_the_title($post_id),$case));
-  // } else {
-  //   $city = get_city($parent_id);
-
-  // if( get_the_title($post_id) === 'Возьмите деньги под залог ПТС спецтехники' ){
-  //     $headline = get_the_title($post_id) . ' в городе ' . set_nowrap(get_city($post_id));
-  //   } else {
-  //     $headline = get_the_title($post_id) . ' в городе ' . set_nowrap(get_city($post_id));
-  //   }
-  // }
-
-  $headline = get_the_title( $post_id );
-  return $headline;
-}
 
 /** Отключаем автоформатирование */
 remove_filter( 'the_content', 'wpautop' );
@@ -332,3 +289,157 @@ add_filter( 'the_seo_framework_custom_field_description', function( $description
 add_filter( 'the_seo_framework_title_from_custom_field', function( $title, $args ) {
 	return wp_kses(do_shortcode( $title),'strip' );
 }, 10, 2 );
+
+
+
+
+
+
+
+
+
+
+
+
+// FUNCTIONS!!!!
+
+// LAYOUT
+function set_nowrap($string){
+	$string = str_replace ( '-' , '‑' , $string );
+	$string = str_replace ( ' ' , '&nbsp;' , $string );
+	return $string;
+}
+
+function get_with_path($path){
+  $path = '/wp-content/themes/avtozalog/build/'.$path;
+  return $path;
+}
+// LAYOUT
+
+function get_page_type($slug){
+  $is_main = (get_current_blog_id() === '1');
+  $arr = [
+  'main' => $is_main ? 'main_msk' : 'main_sub', 
+  'avto-kredit-pod-zalog-pts-v-moskve' => 'cred_msk',
+  'kredit-pod-pts' => 'cred_sub',
+  'avto-zajm-pod-zalog-pts-v-moskve' => 'zajm_msk',
+  'zajm-pod-pts' => 'zajm_sub',
+  'pod-pts' => '24h',
+  'gruzovyh-avtomobilej' => 'truck',
+  'spectekhniki' => 'spec',
+  'motociklov' => 'moto',
+  'kredity-dlya-ip-i-yuridicheskih-lic-pod-zalog-pts' => 'yur',
+  ];
+  return $arr[$slug];
+};
+
+function get_city(){
+  if(is_multisite()){
+    $city = (get_current_blog_id() === 1) ? 'Москва' : get_blog_details( get_current_blog_id() )->blogname;
+  } else {
+    $city = 'Москва'; //что б не выдавало ошибку на локалхосте
+  }
+  return $city;
+}
+
+function get_declension($word,$case) {
+  $dir_path = $_SERVER['DOCUMENT_ROOT'].'/wp-content/themes/avtozalog/';
+  $file_path = $dir_path.'/db/sklon.csv';
+
+  $data = kama_parse_csv_file($file_path);
+
+  $formated_word = 'error...';
+
+  foreach($data as $row){
+    if ($row[0] === $word)
+    $formated_word = $row[$case] ? $row[$case] : 'error...';
+  }
+
+  return $formated_word;
+}
+
+
+
+function get_main_image($slug){
+  $is_main = (get_current_blog_id() === '1');
+  $type = get_page_type($slug);
+
+  switch ($type) {
+    case 'truck':
+        $img = 'img/truck.png';
+        break;
+    case 'moto':
+        $img = 'img/moto.png';
+        break;
+    case 'spec':
+      $img = 'img/spec.png';
+        break;
+    case 'yur':
+        $img = 'img/business.png';
+        break;
+    default:
+      $img = 'img/car.png';
+  }
+  return get_with_path($img);
+}
+
+function get_headlines($post_id,$slug,$section){
+
+  $city = get_city();
+
+  $type = get_page_type($slug);
+
+  $headlines=[];
+
+  switch ($type) {
+    case 'main_msk':
+      $headlines['firstScreen'] = 'Автоломбард под залог ПТС автомобилей в ' . set_nowrap(get_declension($city,1));
+      break;
+    case 'main_sub':
+      $headlines['firstScreen'] = 'Автоломбард под залог ПТС автомобилей в ' . set_nowrap(get_declension($city,1));
+    break;
+    case 'cred_msk':
+      $headlines['firstScreen'] = 'Кредиты под залог ПТС автомобилей в ' . set_nowrap(get_declension($city,1));
+      break;
+    case 'cred_sub':
+      $headlines['firstScreen'] = 'Кредиты под залог ПТС автомобилей в ' . set_nowrap(get_declension($city,1));
+      break;
+    case 'zajm_msk':
+      $headlines['firstScreen'] = 'Займы под залог ПТС автомобилей в ' . set_nowrap(get_declension($city,1));
+      break;
+    case 'zajm_sub':
+      $headlines['firstScreen'] = 'Займы под залог ПТС автомобилей в ' . set_nowrap(get_declension($city,1));
+      break;
+
+    case 'truck':
+      $headlines['firstScreen'] = 'Грузовой автоломбард';
+      break;
+    case 'moto':
+      $headlines['firstScreen'] = 'Мотоломбард';
+      break;
+    case 'spec':
+      $headlines['firstScreen'] = 'Автоломбард спецтехники';
+      break;
+    case '24h':
+      $headlines['firstScreen'] = 'Круглосуточный '.get_blog_details( 1 )->blogname;
+      break;
+    case 'yur':
+      $headlines['firstScreen'] = 'Кредиты для ИП под залог авто ПТС';
+      break;
+    default:
+      $headlines['firstScreen'] = 'error...';
+      $headlines['types'] = 'error...';
+      $headlines['advantages'] = 'error...';
+      $headlines['steps'] = 'error...';
+      $headlines['terms'] = 'error...';
+      $headlines['requirements'] = 'error...';
+      $headlines['calc'] = 'error...';
+      $headlines['faq'] = 'error...';
+      $headlines['big_form'] = 'error...';
+      $headlines['horisontal_form'] = 'error...';
+      $headlines['bottom_form'] = 'error...';
+      $headlines['bottom_cta'] = 'error...';
+  }
+
+  return $headlines[$section];
+}

@@ -7,20 +7,18 @@ get_header();
 while ( have_posts() ) :
 the_post();
 
-switch (get_the_title()) {
-    case 'Быстрый займ под залог ПТС авто':
-        $page_type = 'fast_money';
-        break;
-    case 'Рефинансирование кредитов под залог авто и ПТС':
-        $page_type = 'refinance';
-        break;
-    default:
-        $page_type = 'main';
-}
+// Artem Maleev, [25 Jul 2020, 18:26:49]:
+// знаешь там какой вопрос, у нас тут обычно чередуются блоки с голубым задником и белым, а по этой структуре иногда два голубых идет подряд
 
-set_query_var( 'text_page', $page_type );
+// 4.  Главные-Поддомены (Страница 2-го типа)
 
-set_query_var('image', get_template_directory_uri().'/css/images/car-blue.png');
+// давай тогда этот блок с шагами перенесем, чтобы он был между большой формой и условиями
+
+// сейчас он в структуре между калькулятором и квизом
+
+// это для страниц 2 и 3 типа
+
+
 get_template_part('theme-helpers/template-parts/firstScreen');
 
 

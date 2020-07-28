@@ -36,10 +36,7 @@ use Carbon_Fields\Field;
 Container::make( 'post_meta', 'Город' )
     ->show_on_post_type( 'page' )
     ->add_tab('Контактная информация',  [
-        Field::make( 'text', 'address', 'Адрес' )
-            ->set_width( 50 ),
-        Field::make( 'text', 'coord', 'Координаты' )
-            ->set_width( 50 ),
+
         ]);
 
 
