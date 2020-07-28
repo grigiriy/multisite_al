@@ -2,7 +2,7 @@
     <div class="container mx-auto my-5">
         <div class="row">
             <div class="col-12 text-center">
-                <h2 class="mx-auto">Процесс оформления и получения кредита в ломбарде АвтоЗалог24</h2>
+                <h2 class="mx-auto"><?= get_headlines($post->ID,$post->post_name,'steps'); ?></h2>
                 <hr class="lil-hr lil-hr-main">
                 <p class="subtitle">Четыре шага для получения займа</p>
             </div>

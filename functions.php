@@ -203,7 +203,8 @@ function new_taxonomies_for_pages() {
  add_action( 'init', 'new_taxonomies_for_pages' );
 
 
-
+/** Отключаем автоформатирование */
+remove_filter( 'the_content', 'wpautop' );
 
 
 
@@ -227,23 +228,8 @@ function get_city_link($post_id){
   return $city;
 }
 
-function get_declension_city($atts){
-	$params = shortcode_atts( array(
-		'case' => 'Москва',
-	), $atts );
 
-  $word = get_city(get_the_ID());
-  return set_nowrap(get_declension($word,$params['case']));
-}
-add_shortcode('declension_city', 'get_declension_city');
 
-function get_brand(){
-  return get_bloginfo();
-}
-add_shortcode('brand', 'get_brand');
-
-/** Отключаем автоформатирование */
-remove_filter( 'the_content', 'wpautop' );
 
 
 
@@ -302,6 +288,24 @@ add_filter( 'the_seo_framework_title_from_custom_field', function( $title, $args
 
 
 // FUNCTIONS!!!!
+
+// SHORTCODES
+function get_declension_city($atts){
+	$params = shortcode_atts( array(
+		'case' => 'Москва',
+	), $atts );
+
+  $word = get_city();
+  return set_nowrap(get_declension($word,$params['case']));
+}
+add_shortcode('declension_city', 'get_declension_city');
+
+function get_brand(){
+  return get_blog_details( 1 )->blogname;
+}
+add_shortcode('brand', 'get_brand');
+// SHORTCODES
+
 
 // LAYOUT
 function set_nowrap($string){
@@ -394,38 +398,127 @@ function get_headlines($post_id,$slug,$section){
   switch ($type) {
     case 'main_msk':
       $headlines['firstScreen'] = 'Автоломбард под залог ПТС автомобилей в ' . set_nowrap(get_declension($city,1));
+      $headlines['types'] = 'Автоломбард под залог любого автомобиля в ' . set_nowrap(get_declension($city,1));
+      $headlines['calc'] = 'Калькулятор автоломбарда '.get_blog_details( 1 )->blogname;
+      $headlines['advantages'] = 'Преимущества автоломбарда под ПТС '.get_blog_details( 1 )->blogname;
+      $headlines['big_form'] = 'Заявка на займ в '.set_nowrap(get_declension($city,8)).' филиал';
+      $headlines['terms'] = 'Выдаем деньги под залог ПТС авто в городе '.set_nowrap(get_declension($city,0)).' на Новых Условиях';
+      $headlines['requirements'] = 'Требования автоломбарда под залог ПТС в Москве '.set_nowrap(get_declension($city,1));
+      $headlines['steps'] = 'Процесс оформления и получения кредита в ломбарде '.get_blog_details( 1 )->blogname;
+      $headlines['faq'] = 'Ответы на вопросы';
       break;
     case 'main_sub':
       $headlines['firstScreen'] = 'Автоломбард под залог ПТС автомобилей в ' . set_nowrap(get_declension($city,1));
+      $headlines['advantages'] = 'Преимущества автоломбарда под ПТС авто в '.get_blog_details( 1 )->blogname;
+      $headlines['horisontal_form'] = 'Какую сумму займа вы бы хотели получить';
+      $headlines['steps'] = 'Получите деньги в '.set_nowrap(get_declension($city,1)).' за 35 минут';
+      $headlines['calc'] = 'Онлайн расчет максимальной суммы и процентов';
+      $headlines['requirements'] = 'Забирайте деньги из автоломбарда и пользуйтесь авто';
+      $headlines['types'] = 'Получите кредит заложив ПТС любого автомобиля';
+      $headlines['big_form'] = 'Заявка в автоломбард '.get_blog_details( 1 )->blogname.' в '.set_nowrap(get_declension($city,1));
+      $headlines['terms'] = 'Условия автоломбарда в '.set_nowrap(get_declension($city,1));
+      $headlines['faq'] = 'Ответы на вопросы по услугам автоломбарда в городе '.set_nowrap(get_declension($city,0));
     break;
-    case 'cred_msk':
-      $headlines['firstScreen'] = 'Кредиты под залог ПТС автомобилей в ' . set_nowrap(get_declension($city,1));
-      break;
-    case 'cred_sub':
-      $headlines['firstScreen'] = 'Кредиты под залог ПТС автомобилей в ' . set_nowrap(get_declension($city,1));
-      break;
+
     case 'zajm_msk':
       $headlines['firstScreen'] = 'Займы под залог ПТС автомобилей в ' . set_nowrap(get_declension($city,1));
+      $headlines['types'] = 'Кредитные займы под ПТС машин с правом пользования';
+      $headlines['calc'] = 'Расчет процентов по сумме займа под ПТС и срокам кредитования';
+      $headlines['advantages'] = 'Преимущества получения денег в '.set_nowrap(get_declension($city,1)).' в '.get_blog_details( 1 )->blogname;
+      $headlines['big_form'] = 'Заявка на оформление займа под залог ПТС в '.set_nowrap(get_declension($city,1));
+      $headlines['terms'] = 'Выдаем займы на выгодных условиях';
+      $headlines['requirements'] = 'Требования к кредитополучателю';
+      $headlines['steps'] = 'Как получить деньги по Экспресс займу под залог ПТС';
+      $headlines['faq'] = 'Вопросы по условиям займа в '.set_nowrap(get_declension($city,9)).' офисе';
       break;
     case 'zajm_sub':
       $headlines['firstScreen'] = 'Займы под залог ПТС автомобилей в ' . set_nowrap(get_declension($city,1));
+      $headlines['advantages'] = 'Преимущества получения займа в '.get_blog_details( 1 )->blogname;
+      $headlines['horisontal_form'] = 'Какую сумму денег под залог авто ПТС вы хотите?';
+      $headlines['steps'] = 'Оформляйте займы под залог авто ПТС в '.set_nowrap(get_declension($city,1)).' круглосуточно';
+      $headlines['calc'] = 'Калькулятор займов под залог ПТС';
+      $headlines['requirements'] = 'Получите займ заложив ПТС в городе '.set_nowrap(get_declension($city,0));
+      $headlines['big_form'] = 'Заявка в автоломбард '.get_blog_details( 1 )->blogname.' в '.set_nowrap(get_declension($city,1));
+      $headlines['terms'] = 'Условия займа под залог ПТС в '.set_nowrap(get_declension($city,1));
+      $headlines['faq'] = 'Ответы на вопросы по услугам';
       break;
 
+    case 'cred_msk':
+        $headlines['firstScreen'] = 'Кредиты под залог ПТС автомобилей в ' . set_nowrap(get_declension($city,1));
+        $headlines['types'] = 'Выдаем деньги на любые цели под залог авто с правом вождения';
+        $headlines['calc'] = 'Калькулятор экспресс кредита под ПТС';
+        $headlines['advantages'] = 'Преимущества кредита под ПТС авто в '.get_blog_details( 1 )->blogname.' в '.set_nowrap(get_declension($city,1));
+        $headlines['big_form'] = 'Заявка на кредит под залог авто ПТС';
+        $headlines['terms'] = 'Выгодно взять кредит под залог авто очень просто';
+        $headlines['requirements'] = 'Требования к кредитополучателю';
+        $headlines['steps'] = 'Процесс получения денег под залог ПТС в '. set_nowrap(get_declension($city,1));
+        $headlines['faq'] = 'Вопросы по условиям кредитования в '.set_nowrap(get_declension($city,9)).' филиале';
+      break;
+      case 'cred_sub':
+        $headlines['firstScreen'] = 'Кредиты под залог ПТС автомобилей в ' . set_nowrap(get_declension($city,1));
+        $headlines['advantages'] = 'Выгоды кредитования под залог ПТС авто';
+        $headlines['horisontal_form'] = 'Какую сумму денег под залог авто ПТС вы хотите?';
+        $headlines['steps'] = 'Оформляйте кредиты под залог авто ПТС в '.set_nowrap(get_declension($city,1)).' круглосуточно';
+        $headlines['calc'] = 'Калькулятор кредитования под залог ПТС';
+        $headlines['requirements'] = 'Получите деньги заложив ПТС любого автомобиля в городе '.set_nowrap(get_declension($city,0));
+        $headlines['big_form'] = 'Заявка на кредит в автоломбард '.get_blog_details( 1 )->blogname.' в '.set_nowrap(get_declension($city,1));
+        $headlines['terms'] = 'Условия кредитовария под залог ПТС в '.set_nowrap(get_declension($city,1));
+        $headlines['faq'] = 'Ответы на вопросы по услугам';
+      break;
+
+    case 'yur':
+      $headlines['firstScreen'] = 'Кредиты для ИП под залог авто ПТС';
+      $headlines['types'] = 'Выдача кредитов для бизнеса под залог коммерческого авто';
+      $headlines['calc'] = 'Калькулятор для Юридических лиц и ИП';
+      $headlines['advantages'] = 'Преимущества автоломбарда для юридических лиц «'.get_blog_details( 1 )->blogname.'»';
+      $headlines['big_form'] = 'Заявка на займ';
+      $headlines['terms'] = 'Условия кредитования для ИП и Юридических лиц';
+      $headlines['requirements'] = 'Требования автоломбарда к юридическим лицам';
+      $headlines['steps'] = 'Как получить займ под залог ПТС юридическим лицам';
+      $headlines['faq'] = 'Ответы на вопросы';
+    break;
     case 'truck':
       $headlines['firstScreen'] = 'Грузовой автоломбард';
-      break;
-    case 'moto':
-      $headlines['firstScreen'] = 'Мотоломбард';
+      $headlines['advantages'] = 'Выгода получения займа под залог грузовика';
+      $headlines['horisontal_form'] = 'Укажите желаемую сумму под залог ПТС грузовика';
+      $headlines['calc'] = 'Расчет условий кредитования в автоломбарде';
+      $headlines['requirements'] = 'Чтобы получить займ под залог ПТС грузовой автомобиль';
+      $headlines['big_form'] = 'Заявка в грузовой автоломбард '.get_blog_details( 1 )->blogname;
+      $headlines['steps'] = 'Алгоритм получения денег под ПТС грузовика';
+      $headlines['faq'] = 'Вопросы по кредитам под залог ПТС грузового автомобиля';
       break;
     case 'spec':
       $headlines['firstScreen'] = 'Автоломбард спецтехники';
+      $headlines['advantages'] = 'Выгода кредитования под залог спецтехники';
+      $headlines['horisontal_form'] = 'Укажите желаемую сумму под залог ПТС спецтехники';
+      $headlines['calc'] = 'Расчет условий получения кредита в автоломбарде';
+      $headlines['requirements'] = 'Требования автоломбарда';
+      $headlines['big_form'] = 'Заявка на займ под ПТС спецтехники';
+      $headlines['steps'] = 'Как получить займ под залог ПТС спецтехники';
+      $headlines['faq'] = 'Вопросы по кредитованию в автоломбарде '.get_blog_details( 1 )->blogname;
+      break;
+    case 'moto':
+      $headlines['firstScreen'] = 'Мотоломбард';
+      $headlines['advantages'] = 'Выгода кредитования под залог мототехники';
+      $headlines['horisontal_form'] = 'Укажите желаемую сумму займа под ПТС мотоцикла';
+      $headlines['calc'] = 'Расчет займа под залог ПТС мотоцикла';
+      $headlines['requirements'] = 'Требования мотоломбарда';
+      $headlines['big_form'] = 'Заявка на займ под ПТС мотоцикла';
+      $headlines['steps'] = 'Вопросы по кредитованию под залог мотоцикла';
+      $headlines['faq'] = 'Вопросы по кредитованию в автоломбарде '.get_blog_details( 1 )->blogname;
       break;
     case '24h':
       $headlines['firstScreen'] = 'Круглосуточный '.get_blog_details( 1 )->blogname;
+      $headlines['advantages'] = 'Выгода кредитования в автоломбарде';
+      $headlines['horisontal_form'] = 'Укажите желаемую сумму кредитования';
+      $headlines['steps'] = 'Как получаются займы под залог ПТС авто';
+      $headlines['calc'] = 'Калькулятор автозалога под ПТС';
+      $headlines['requirements'] = 'Автозалог любых автомобилей с ПТС';
+      $headlines['big_form'] = 'Заявка на автозалоговый займ под ПТС';
+      $headlines['terms'] = 'Условия автозалога';
+      $headlines['faq'] = 'Ответы на вопросы';
       break;
-    case 'yur':
-      $headlines['firstScreen'] = 'Кредиты для ИП под залог авто ПТС';
-      break;
+
     default:
       $headlines['firstScreen'] = 'error...';
       $headlines['types'] = 'error...';
@@ -437,8 +530,8 @@ function get_headlines($post_id,$slug,$section){
       $headlines['faq'] = 'error...';
       $headlines['big_form'] = 'error...';
       $headlines['horisontal_form'] = 'error...';
-      $headlines['bottom_form'] = 'error...';
-      $headlines['bottom_cta'] = 'error...';
+      // $headlines['bottom_form'] = 'error...';
+      // $headlines['bottom_cta'] = 'error...';
   }
 
   return $headlines[$section];

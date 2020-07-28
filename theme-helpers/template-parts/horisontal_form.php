@@ -18,8 +18,7 @@
                         </div>
                         <div class="ml-max row">
                             <div class="col-12 col-lg-4 col-xl-5 pr-md-0 mb-3 mb-lg-0">
-                                <h4 class="mb-0 text-center text-lg-left mx-auto">Какую сумму вы бы хотели получить?
-                                </h4>
+                                <h2 class="h4 mb-0 text-center text-lg-left mx-auto"><?= get_headlines($post->ID,$post->post_name,'horisontal_form'); ?></h2>
                             </div>
                             <div class="col-12 col-lg-8 col-xl-7">
                                 <form class="ml-auto d-flex flex-wrap">

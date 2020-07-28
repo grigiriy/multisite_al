@@ -3,7 +3,7 @@
         <div class="container-fluid container-md mx-auto mb-5">
             <div class="row mt-5 mb-0 mb-lg-4 pt-lg-5">
                 <div class="col-12 col-lg-7 pr-0">
-                    <h2>Автоломбард под залог ПТС любой техники в городе Москва </h2>
+                    <h2><?= get_headlines($post->ID,$post->post_name,'types'); ?></h2>
                     <hr class="d-block d-lg-none lil-hr lil-hr-main ml-0">
                 </div>
                 <div class="col-12 col-lg-5 d-flex">

@@ -3,7 +3,7 @@
         <div class="container-fluid container-md mx-auto mb-lg-5">
             <div class="row my-lg-5 pt-5">
                 <div class="col-12 col-lg-7 pr-0">
-                    <h2>Ответы на вопросы 24/7</h2>
+                    <h2><?= get_headlines($post->ID,$post->post_name,'faq'); ?></h2>
                     <hr class="d-block d-lg-none lil-hr lil-hr-main ml-0">
                 </div>
                 <div class="col-12 col-lg-5 d-flex">

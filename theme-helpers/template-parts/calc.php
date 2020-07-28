@@ -2,7 +2,7 @@
     <div class="container mx-auto my-5">
         <div class="row mt-3">
             <div class="col-12 col-lg-7">
-                <h2>Калькулятор автоломбарда АвтоЗалог24</h2>
+                <h2><?= get_headlines($post->ID,$post->post_name,'calc'); ?></h2>
                 <hr class="d-block d-lg-none lil-hr lil-hr-main ml-0">
             </div>
             <div class="col-12 col-lg-5 d-flex">

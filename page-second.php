@@ -21,62 +21,27 @@ the_post();
 
 get_template_part('theme-helpers/template-parts/firstScreen');
 
+get_template_part('theme-helpers/template-parts/advantages');
 
-set_query_var( 'subtitle_arr', [
-    carbon_get_theme_option($page_type)[0]['calc_sub'],
-    carbon_get_theme_option($page_type)[0]['calc_case'],
-    carbon_get_theme_option($page_type)[0]['calc_sub_after']
-]);
+get_template_part('theme-helpers/template-parts/horisontal_form');
+
+get_template_part('theme-helpers/template-parts/steps');
+
 get_template_part('theme-helpers/template-parts/calc');
-set_query_var( 'text', 'calc_text' );
-get_template_part('theme-helpers/template-parts/textBlock');
 
+get_template_part('theme-helpers/template-parts/requirements');
 
-set_query_var( 'subtitle_arr', [
-    carbon_get_theme_option($page_type)[0]['types_sub'],
-    carbon_get_theme_option($page_type)[0]['types_case'],
-    carbon_get_theme_option($page_type)[0]['types_sub_after']
-]);
 get_template_part('theme-helpers/template-parts/types');
-set_query_var( 'text', 'types_text' );
-get_template_part('theme-helpers/template-parts/textBlock');
 
+get_template_part('theme-helpers/template-parts/big_form');
 
-get_template_part('theme-helpers/template-parts/form','quiz');
-
-
-set_query_var( 'subtitle_arr', [
-    carbon_get_theme_option($page_type)[0]['terms_sub'],
-    carbon_get_theme_option($page_type)[0]['terms_case'],
-    carbon_get_theme_option($page_type)[0]['terms_sub_after']
-]);
 get_template_part('theme-helpers/template-parts/terms');
 
-
-set_query_var( 'subtitle_arr', [
-    carbon_get_theme_option($page_type)[0]['requirements_sub'],
-    carbon_get_theme_option($page_type)[0]['requirements_case'],
-    carbon_get_theme_option($page_type)[0]['requirements_sub_after']
-]);
-get_template_part('theme-helpers/template-parts/requirements');
-set_query_var( 'text', 'requirements_text' );
-get_template_part('theme-helpers/template-parts/textBlock');
-
-
-set_query_var( 'subtitle_arr', [
-    carbon_get_theme_option($page_type)[0]['order_sub'],
-    carbon_get_theme_option($page_type)[0]['order_case'],
-    carbon_get_theme_option($page_type)[0]['order_sub_after']
-]);
-get_template_part('theme-helpers/template-parts/order');
-
-set_query_var( 'subtitle_arr', [
-    carbon_get_theme_option($page_type)[0]['faq_sub'],
-    carbon_get_theme_option($page_type)[0]['faq_case'],
-    carbon_get_theme_option($page_type)[0]['faq_sub_after']
-]);
-set_query_var( 'faq_type', $page_type );
 get_template_part('theme-helpers/template-parts/faq');
+
+get_template_part('theme-helpers/template-parts/bottom_cta');
+
+get_template_part('theme-helpers/template-parts/bottom_form');
 
 endwhile;
 get_footer();
