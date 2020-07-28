@@ -2,7 +2,7 @@
     <div class="container mx-auto">
         <div class="row">
             <div class="col-8 col-md-6 pr-0 pt-5">
-                <h1><?= get_headline($post->ID,$post->post_parent,'0') ?></h1>
+                <h1><?= get_headlines($post->ID,$post->post_name,'firstScreen') ?></h1>
                 <div class="row mt-5 mb-lg-5">
                     <div class="col-12 col-lg-6">
                         <div class="d-flex mb-2">
@@ -106,7 +106,7 @@
                 </div>
             </div>
             <div class="col-4 col-md-6 d-flex d-lg-block">
-                <img class="mb-md-auto mt-lg-0 mb-5 mt-auto" src="<?= get_with_path('img/car.png');?>" alt="">
+                <img class="mb-md-auto mt-lg-0 mb-5 mt-auto" src="<?= get_main_image($post->post_name); ?>" alt="">
             </div>
             <div class="col-12 d-flex d-lg-none mb-5">
                 <button class="btn btn-main w-100 mt-3">Отправить заявку</button>
