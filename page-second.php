@@ -27,13 +27,25 @@ get_template_part('theme-helpers/template-parts/horisontal_form');
 
 get_template_part('theme-helpers/template-parts/steps');
 
+set_query_var( 'text', carbon_get_post_meta($post->ID,'steps_text') );
+get_template_part('theme-helpers/template-parts/textBlock');
+
 get_template_part('theme-helpers/template-parts/calc');
 
 get_template_part('theme-helpers/template-parts/requirements');
 
+set_query_var( 'text', carbon_get_post_meta($post->ID,'requirements_text') );
+get_template_part('theme-helpers/template-parts/textBlock');
+
 get_template_part('theme-helpers/template-parts/types');
 
+set_query_var( 'text', carbon_get_post_meta($post->ID,'types_text') );
+get_template_part('theme-helpers/template-parts/textBlock');
+
 get_template_part('theme-helpers/template-parts/big_form');
+
+set_query_var( 'text', carbon_get_post_meta($post->ID,'big_form__text') );
+get_template_part('theme-helpers/template-parts/textBlock');
 
 get_template_part('theme-helpers/template-parts/terms');
 
