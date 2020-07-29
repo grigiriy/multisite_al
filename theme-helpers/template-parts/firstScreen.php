@@ -77,7 +77,7 @@
                             </svg>
 
                             <p class="ml-3">
-                                После выдачи займа <span class="text-nowrap">авто остается у Вас</span>
+                                После выдачи займа <span class="text-nowrap"><?= vichele('авто',$post->post_name,); ?> остается у Вас</span>
                             </p>
                         </div>
                         <div class="d-flex mb-2">

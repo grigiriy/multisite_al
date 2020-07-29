@@ -23,10 +23,10 @@
                                         fill="#00B4E3" />
                                 </svg>
                             </div>
-                            <p class="subtitle semibold ml-3 mb-0">Автомобиль остается <span class="text-nowrap">у
+                            <p class="subtitle semibold ml-3 mb-0"><?= vichele('Автомобиль',$post->post_name,); ?> остается <span class="text-nowrap">у
                                     Вас</span></p>
                         </div>
-                        <p class="mt-3">После выдачи денег, вы продолжаете пользоваться авто без датчиков и маячков</p>
+                        <p class="mt-3">После выдачи денег, вы продолжаете пользоваться <?= vichele('авто',$post->post_name,); ?> без датчиков и маячков</p>
                     </div>
 
                 </div>
@@ -150,7 +150,7 @@
                             <p class="subtitle semibold ml-3 mb-0">Займ<br>
                                 <span class="text-nowrap">по 3 документам</span></p>
                         </div>
-                        <p class="mt-3">Для получения займа, вам понадобиться толькопаспорт РФ, ПТС и СТРС</p>
+                        <p class="mt-3">Для получения займа, вам понадобиться только паспорт РФ, ПТС и СТРС</p>
                     </div>
 
                 </div>
@@ -198,7 +198,7 @@
                                 </svg>
 
                             </div>
-                            <p class="subtitle semibold ml-3 mb-0">Без переоформления автомобиля</p>
+                            <p class="subtitle semibold ml-3 mb-0">Без переоформления <?= vichele('автомобиля',$post->post_name,); ?></p>
                         </div>
                         <p class="mt-3">Мы заключаем договор займа и залога, без переформления и записей в ПТС</p>
 
