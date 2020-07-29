@@ -1,9 +1,11 @@
-<div class="fixed-top border-bottom bg-white">
+<header class="fixed-top border-bottom bg-white">
     <div class="container-fluid container-lg">
         <div class="row">
             <nav class="navbar d-none d-lg-flex w-100">
                 <div class="logo">
+                <a href="/">
                 <img src="<?= get_with_path('img/logo.png');?>" alt="">
+                </a>
                 </div>
                 <button class="text-main city-btn btn btn-link">
                     <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -15,21 +17,21 @@
                 </button>
                 <ul class="navbar-nav mx-auto d-flex flex-row">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Займы</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Кредиты</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#calc">Калькулятор</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/yuridicheskie-licza/">Для Юр. Лиц.</a>
+                        <a class="nav-link" href="#big_form">Заявка</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">F.A.Q.</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/kredity-dlya-ip-i-yuridicheskih-lic-pod-zalog-pts/">Для Юр. Лиц.</a>
                     </li>
                 </ul>
                 <div class="header-phone d-flex flex-column pr-3">
                     <p class="phone mt-auto mb-1"><a href="tel:88003334050" class="text-main">8 800 333 40 50</a></p>
-                    <p class="smaller text-muted mb-auto">Звонок бесплатный</p>
+                    <p class="smaller text-muted mb-auto text-right">Звонок бесплатный</p>
                 </div>
                 <button class="btn btn-outline-main d-none d-xl-block">Заказать звонок</button>
                 <a class="d-block d-xl-none" href="#">
@@ -98,4 +100,4 @@
             </div>
         </div>
     </div>
-</div>
+</header>
