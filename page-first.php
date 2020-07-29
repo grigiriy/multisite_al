@@ -6,34 +6,27 @@ get_header();
 
 while ( have_posts() ) :
 the_post();
+set_query_var( 'text', '' );
 
 get_template_part('theme-helpers/template-parts/firstScreen');
 
-get_template_part('theme-helpers/template-parts/types');
-
 set_query_var( 'text', carbon_get_post_meta($post->ID,'types_text') );
-get_template_part('theme-helpers/template-parts/textBlock');
+get_template_part('theme-helpers/template-parts/types');
 
 get_template_part('theme-helpers/template-parts/calc');
 
-get_template_part('theme-helpers/template-parts/advantages');
-
 set_query_var( 'text', carbon_get_post_meta($post->ID,'adv_text') );
-get_template_part('theme-helpers/template-parts/textBlock');
+get_template_part('theme-helpers/template-parts/advantages');
 
 get_template_part('theme-helpers/template-parts/big_form');
 
-get_template_part('theme-helpers/template-parts/terms');
-
 set_query_var( 'text', carbon_get_post_meta($post->ID,'terms_text') );
-get_template_part('theme-helpers/template-parts/textBlock');
+get_template_part('theme-helpers/template-parts/terms');
 
 get_template_part('theme-helpers/template-parts/requirements');
 
-get_template_part('theme-helpers/template-parts/steps');
-
 set_query_var( 'text', carbon_get_post_meta($post->ID,'steps_text') );
-get_template_part('theme-helpers/template-parts/textBlock');
+get_template_part('theme-helpers/template-parts/steps');
 
 get_template_part('theme-helpers/template-parts/faq');
 

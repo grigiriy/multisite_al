@@ -183,6 +183,7 @@
                     </div>
                 </div>
             </div>
+            <?php get_template_part('theme-helpers/template-parts/textBlock'); ?>
         </div>
     </div>
 </section>
