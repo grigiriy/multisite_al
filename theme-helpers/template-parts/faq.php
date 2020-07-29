@@ -12,10 +12,10 @@
                 </div>
             </div>
             <div class="row">
-
-                <?php foreach( carbon_get_post_meta($post->ID,'faq_text') as $key=>$item) { ?>
-
                 <div class="col-12 accordion" id="faq_accordion">
+
+                    <?php foreach( carbon_get_post_meta($post->ID,'faq_text') as $key=>$item) { ?>
+
                     <div class="mb-3">
                         <div class="rounded-xl bg-lightblue" id="heading_<?=$key; ?>">
                             <div class="collapsed d-flex" data-toggle="collapse" data-target="#collapse_<?=$key; ?>"
@@ -30,7 +30,7 @@
                                     </svg>
                                 </div>
                                 <span class="pl-3 text-left">
-                                <?= apply_filters( 'the_content', wpautop( $item['subtitle']  ) ); ?>
+                                <?= apply_filters( 'the_content', $item['subtitle'] ); ?>
                                 </span>
                             </div>
 
@@ -38,16 +38,15 @@
 
                         <div id="collapse_<?=$key; ?>" class="collapse" aria-labelledby="heading_<?=$key; ?>"
                             data-parent="#faq_accordion">
-                            <p class="bg-lightblue rounded-xl py-4 px-5">
-                            <?= apply_filters( 'the_content', wpautop( $item['text']  ) ); ?>
-                            </p>
+                            <div class="bg-lightblue rounded-xl py-4 px-5">
+                            <?= apply_filters( 'the_content', $item['text'] ); ?>
+                            </div>
                         </div>
                     </div>
                     
+                    <?php } ?>
+
                 </div>
-                
-                <?php } ?>
-                    
             </div>
         </div>
     </div>
