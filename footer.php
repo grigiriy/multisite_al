@@ -1,4 +1,4 @@
-<footer>
+  <footer>
   <div class="container">
     <div class="row border-bottom pt-5 pb-4 mx-0">
       <div class="col-12 col-lg-2 px-0">
@@ -41,20 +41,22 @@
         <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-3 ml-sm-2">
           <div class="col">
             <ul class="list-unstyled">
-              <li><a href="#">Автоломбард</a></li>
-              <li><a href="#">Калькулятор</a></li>
+              <li><a href="/">Автоломбард</a></li>
+              <li><a href="/pod-pts/">Автоломбард <span class="text-nowrap">легковых авто</span></a></li>
+              <li><a href="/motociklov/">Автоломбард мототехники</a></li>
             </ul>
           </div>
           <div class="col">
             <ul class="list-unstyled">
-              <li><a href="#">Грузовой автоломбард</a></li>
-              <li><a href="#">Автоломбард спецтехники</a></li>
+              <li><a href="/kredity-dlya-ip-i-yuridicheskih-lic-pod-zalog-pts/">Автоломбард <span class="text-nowrap">для юр. лиц</span></a></li>
+              <li><a href="/gruzovyh-avtomobilej/">Грузовой автоломбард</a></li>
+              <li><a href="/spectekhniki/">Автоломбард спецтехники</a></li>
             </ul>
           </div>
           <div class="col">
             <ul class="list-unstyled">
-              <li><a href="#">Автоломбард мототехники</a></li>
-              <li><a href="/yuridicheskie-licza/">Юр. Лица</a></li>
+              <li><a href="<?= get_current_blog_id() === 1 ? '/avto-zajm-pod-zalog-pts-v-moskve/' : '/zajm-pod-pts/' ;?>">Займ под залог ПТС</a></li>
+              <li><a href="<?= get_current_blog_id() === 1 ? '/avto-kredit-pod-zalog-pts-v-moskve/' : '/kredit-pod-pts/' ;?>">Кредит под залог ПТС</a></li>
             </ul>
           </div>
           <div class="col px-0 mx-auto">
@@ -86,11 +88,28 @@
 ?>
 
 <?php wp_footer() ?>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(65958358, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/65958358" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
   <script defer="defer" src="<?= get_with_path('js/jquery.min.js');?>"></script>
   <script defer="defer" src="<?= get_with_path('js/bootstrap.bundle.min.js');?>"></script>
   <script defer="defer" src="<?= get_with_path('js/slick.min.js');?>"></script>
   <script defer="defer" src="<?= get_with_path('js/nouislider.min.js');?>"></script>
   <script defer="defer" src="<?= get_with_path('js/calc.js');?>"></script>
   <script defer="defer" src="<?= get_with_path('js/main.min.js');?>"></script>
+</body>
+</html>
 </body>
 </html>
