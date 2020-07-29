@@ -41,22 +41,22 @@
         <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-3 ml-sm-2">
           <div class="col">
             <ul class="list-unstyled">
-              <li><a href="/">Автоломбард</a></li>
-              <li><a href="/pod-pts/">Автоломбард <span class="text-nowrap">легковых авто</span></a></li>
-              <li><a href="/motociklov/">Автоломбард мототехники</a></li>
+              <li><a href="<?= network_home_url();?>">Автоломбард</a></li>
+              <li><a href="<?= network_home_url();?>pod-pts/">Автоломбард <span class="text-nowrap">легковых авто</span></a></li>
+              <li><a href="<?= network_home_url();?>motociklov/">Автоломбард мототехники</a></li>
             </ul>
           </div>
           <div class="col">
             <ul class="list-unstyled">
-              <li><a href="/kredity-dlya-ip-i-yuridicheskih-lic-pod-zalog-pts/">Автоломбард <span class="text-nowrap">для юр. лиц</span></a></li>
-              <li><a href="/gruzovyh-avtomobilej/">Грузовой автоломбард</a></li>
-              <li><a href="/spectekhniki/">Автоломбард спецтехники</a></li>
+              <li><a href="<?= network_home_url();?>kredity-dlya-ip-i-yuridicheskih-lic-pod-zalog-pts/">Автоломбард <span class="text-nowrap">для юр. лиц</span></a></li>
+              <li><a href="<?= network_home_url();?>gruzovyh-avtomobilej/">Грузовой автоломбард</a></li>
+              <li><a href="<?= network_home_url();?>spectekhniki/">Автоломбард спецтехники</a></li>
             </ul>
           </div>
           <div class="col">
             <ul class="list-unstyled">
-              <li><a href="<?= get_current_blog_id() === 1 ? '/avto-zajm-pod-zalog-pts-v-moskve/' : '/zajm-pod-pts/' ;?>">Займ под залог ПТС</a></li>
-              <li><a href="<?= get_current_blog_id() === 1 ? '/avto-kredit-pod-zalog-pts-v-moskve/' : '/kredit-pod-pts/' ;?>">Кредит под залог ПТС</a></li>
+              <li><a href="<?= get_home_url().get_current_blog_id() === 1 ? 'avto-zajm-pod-zalog-pts-v-moskve/' : 'zajm-pod-pts/' ;?>">Займ под залог ПТС</a></li>
+              <li><a href="<?= get_home_url().get_current_blog_id() === 1 ? 'avto-kredit-pod-zalog-pts-v-moskve/' : 'kredit-pod-pts/' ;?>">Кредит под залог ПТС</a></li>
             </ul>
           </div>
           <div class="col px-0 mx-auto">
@@ -70,9 +70,9 @@
     </div>
     <div class="row mx-0">
       <p class="col-12 text-center text-muted smaller pt-3">
-        Информация на сайте не является публичной офертой. Сервис «ПТС ЗАЙМ» оказывает содействие в подборе
+        Информация на сайте не является публичной офертой. Сервис АвтоЗалог24» оказывает содействие в подборе
         финансовых услуг компаний-партнеров и не является финансовым учреждением, банком, микрофинансовой
-        организацией, лизинговой компанией, или ломбардом. Работа сайта autolombard-pts-zaim.ru не связана с
+        организацией, лизинговой компанией, или ломбардом. Работа сайта autolombard-autozalog.ru не связана с
         осуществлением инвестиционной деятельности. Дополнительные и скрытые комиссии не взимаются. Все
         права защищены.
       </p>

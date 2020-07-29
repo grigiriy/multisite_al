@@ -26,7 +26,7 @@
                         <a class="nav-link" href="#faq">F.A.Q.</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/kredity-dlya-ip-i-yuridicheskih-lic-pod-zalog-pts/">Для Юр. Лиц.</a>
+                        <a class="nav-link" href="<?= network_home_url();?>/kredity-dlya-ip-i-yuridicheskih-lic-pod-zalog-pts/">Для Юр. Лиц.</a>
                     </li>
                 </ul>
                 <div class="header-phone d-flex flex-column pr-3">
@@ -89,7 +89,7 @@
                             <a class="nav-link" href="#calc">Калькудятор</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/yuridicheskie-licza/">Для Юр. Лиц.</a>
+                            <a class="nav-link" href="<?= network_home_url();?>kredity-dlya-ip-i-yuridicheskih-lic-pod-zalog-pts/">Для Юр. Лиц.</a>
                         </li>
                     </ul>
                     <div class="header-phone mt-3">
