@@ -80,16 +80,16 @@
                     </button>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Займы</a>
+                            <a class="nav-link" href="#calc">Калькулятор</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Кредиты</a>
+                            <a class="nav-link" href="#big_form">Заявка</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#calc">Калькудятор</a>
+                            <a class="nav-link" href="#faq">F.A.Q.</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= network_home_url();?>kredity-dlya-ip-i-yuridicheskih-lic-pod-zalog-pts/">Для Юр. Лиц.</a>
+                            <a class="nav-link" href="<?= network_home_url();?>/kredity-dlya-ip-i-yuridicheskih-lic-pod-zalog-pts/">Для Юр. Лиц.</a>
                         </li>
                     </ul>
                     <div class="header-phone mt-3">

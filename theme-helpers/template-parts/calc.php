@@ -68,7 +68,7 @@
                             Получить одобрение
                         </button>
                         <p class="smaller text-center px-3">
-                            Нажимая на кнопку, вы даете согласие на обработку ваших персональных данных
+                            Нажимая на кнопку, вы даете согласие на <a href="/privacy_policy.pdf" class="text-main" download target="_blank">обработку ваших персональных данных</a>
                         </p>
                     </div>
                 </div>
