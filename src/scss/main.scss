@@ -120,14 +120,19 @@ hr.lil-hr {
   box-shadow: 0px auto 20px #eaecef !important;
 }
 
-button.btn {
+button.btn,
+a.btn {
   padding: 1rem;
   font-weight: 600;
   @include media-mobile_small-max {
     font-size: 0.9rem;
   }
 }
-
+button.close {
+  svg {
+    max-width: 20px;
+  }
+}
 .form-control {
   height: 3.5rem;
   border-color: #e6e6e6;
