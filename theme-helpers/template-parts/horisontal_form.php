@@ -20,14 +20,14 @@
                             <div class="col-12 col-lg-4 col-xl-5 pr-md-0 mb-3 mb-lg-0">
                                 <h2 class="h4 mb-0 text-center text-lg-left mx-auto"><?= get_headlines($post->ID,$post->post_name,'horisontal_form'); ?></h2>
                             </div>
-                            <div class="col-12 col-lg-8 col-xl-7">
-                                <form class="ml-auto d-flex flex-wrap">
+                            <form class="col-12 col-lg-8 col-xl-7" action="javascript:void(0)">
+                                <div class="ml-auto d-flex flex-wrap">
                                     <input type="text" class="form-control" placeholder="От 25 000 до 10 000 000 ₽"
                                         aria-describedby="submit-horisontal">
-                                    <button class="btn btn-main" type="submit" id="submit-horisontal">Получить
+                                    <button class="btn btn-main" type="submit" onclick="set_calc(this)" id="submit-horisontal">Получить
                                         одобрение</button>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

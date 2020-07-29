@@ -52,11 +52,11 @@
                         </div>
                         <div class="d-flex subtitle mb-2">
                             <span class="text-nowrap">Сумма процентов</span>
-                            <span class="ml-auto h4 text-right text-nowrap" id="calc_overpayment">177 789 ₽</span>
+                            <span class="ml-auto h4 text-right text-nowrap" id="calc_overpayment">169 846 ₽</span>
                         </div>
                         <div class="d-flex subtitle mb-2">
                             <span class="text-nowrap">Сумма к возврату</span>
-                            <span class="ml-auto h4 text-right text-nowrap" id="calc_payments_sum">762 789 ₽</span>
+                            <span class="ml-auto h4 text-right text-nowrap" id="calc_payments_sum">1 169 846 ₽</span>
                         </div>
                     </div>
                 </div>
