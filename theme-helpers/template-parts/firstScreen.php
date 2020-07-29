@@ -101,7 +101,7 @@
                             </p>
                         </div>
 
-                        <button class="btn btn-main w-100 d-none d-lg-block">Отправить заявку</button>
+                        <button class="btn btn-main w-100 d-none d-lg-block" data-toggle="modal" data-target="#formModal">Отправить заявку</button>
                     </div>
                 </div>
             </div>
@@ -109,7 +109,7 @@
                 <img class="mb-md-auto mt-lg-0 mb-5 mt-auto" src="<?= get_main_image($post->post_name); ?>" alt="">
             </div>
             <div class="col-12 d-flex d-lg-none mb-5">
-                <button class="btn btn-main w-100 mt-3">Отправить заявку</button>
+                <button class="btn btn-main w-100 mt-3" data-toggle="modal" data-target="#formModal">Отправить заявку</button>
             </div>
         </div>
     </div>

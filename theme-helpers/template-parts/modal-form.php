@@ -3,11 +3,11 @@
         <div class="modal-content px-4 py-5">
             <div class="modal-body">
                 <div class="mb-2 d-flex">
-                    <div class="ml-auto pl-5">
+                    <div class="mx-auto">
                         <p class="h2 mt-3">Заявка на займ</p>
                         <p class="subtitle ml-auto mt-2 mb-3">Мы свяжемся с вами <strong>через минуту</strong></p>
                     </div>
-                    <button type="button" class="ml-auto close align-self-start font-weight-light mt-n4" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="position-absolute close text-main align-self-baseline" data-dismiss="modal" aria-label="Close">
                         <svg version="1.1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
                             <!-- Icons made by Freepik (www.flaticon.com/authors/freepik) from Flaticon (www.flaticon.com) -->
                             <g>
@@ -22,7 +22,16 @@
                         </svg>
                     </button>
                 </div>
-                <?= do_shortcode('[contact-form-7 id="3830" html_class="row mx-auto"]'); ?>
+                <form>
+                    <input type="text" class="form-control my-3" placeholder="Ваше имя">
+                    <input type="text" class="form-control my-3 __phone" placeholder="+7 (___) ___-__-__" name="phone">
+                    <button class="btn btn-main w-100 mb-3" type="submit">
+                        Получить одобрение
+                    </button>
+                    <p class="smaller text-center px-3">
+                        Нажимая на кнопку, вы даете согласие на <a href="/privacy_policy.pdf" class="text-main" download target="_blank">обработку ваших персональных данных</a>
+                    </p>
+                </form>
             </div>
         </div>
     </div>

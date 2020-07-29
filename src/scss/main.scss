@@ -128,11 +128,6 @@ a.btn {
     font-size: 0.9rem;
   }
 }
-button.close {
-  svg {
-    max-width: 20px;
-  }
-}
 .form-control {
   height: 3.5rem;
   border-color: #e6e6e6;
@@ -203,4 +198,13 @@ button.close {
 }
 .__phone.__hidden:after {
   opacity: 0;
+}
+.close {
+  right: 0;
+  top: 0;
+  border: 0;
+  background: none;
+  svg {
+    max-width: 20px;
+  }
 }
