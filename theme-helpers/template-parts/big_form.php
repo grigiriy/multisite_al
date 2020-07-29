@@ -33,10 +33,7 @@
                 <div class="col-12 col-lg-4 pl-lg-5 mt-3 mt-lg-0">
                     <button class="w-100 btn btn-main mb-3" type="submit">Получить
                         одобрение</button>
-                    <p class="smaller text-center">Нажимая на кнопку, вы даете согласие на обработку ваших
-                        персональных
-                        данных
-                    </p>
+                        <p class="smaller text-center">Нажимая на кнопку, вы даете согласие на <a href="/privacy_policy.pdf" class="text-main" download target="_blank">обработку ваших персональных данных</a></p>
                 </div>
             </form>
         </div>

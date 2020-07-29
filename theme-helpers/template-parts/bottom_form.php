@@ -32,10 +32,7 @@
                             <input type="text" class="form-control" placeholder="+7 (___) ___-__-__" name="phone">
                         </div>
                         <div class="col order-4">
-                            <p class="smaller mt-3">Нажимая на кнопку, вы даете согласие на обработку ваших
-                                персональных
-                                данных
-                            </p>
+                            <p class="smaller mt-3">Нажимая на кнопку, вы даете согласие на <a href="/privacy_policy.pdf" class="text-main" download target="_blank">обработку ваших персональных данных</a></p>
                         </div>
                     </div>
                 </form>
