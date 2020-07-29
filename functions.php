@@ -139,20 +139,20 @@ add_action(
 // }
 
 
-// add_action( 'carbon_fields_register_fields', 'crb_register_custom_fields' );
-// function crb_register_custom_fields() {
-//   include_once __DIR__ . '/theme-helpers/custom-fields/custom.php';
-// }
+add_action( 'carbon_fields_register_fields', 'crb_register_custom_fields' );
+function crb_register_custom_fields() {
+  include_once __DIR__ . '/theme-helpers/custom-fields/custom.php';
+}
 
-// add_action( 'after_setup_theme', 'crb_load' );
-// function crb_load() {
-//   require_once( 'vendor/autoload.php' );
-//   \Carbon_Fields\Carbon_Fields::boot();
-// }
+add_action( 'after_setup_theme', 'crb_load' );
+function crb_load() {
+  require_once( 'vendor/autoload.php' );
+  \Carbon_Fields\Carbon_Fields::boot();
+}
 
 
 
-function kama_parse_csv_file( $file_path, $file_encodings = ['cp1251','UTF-8'], $col_delimiter = ';', $row_delimiter = "\r\n" ){
+function kama_parse_csv_file( $file_path, $file_encodings = ['cp1251','UTF-8'], $col_delimiter = ';', $row_delimiter = "\n" ){
   if( !file_exists($file_path) )
     return 'false';
 
@@ -194,7 +194,6 @@ function kama_parse_csv_file( $file_path, $file_encodings = ['cp1251','UTF-8'], 
     unset( $lines[$key] );
   }
   return $data;
-
 }
 
 function new_taxonomies_for_pages() {
@@ -301,7 +300,8 @@ function get_declension_city($atts){
 add_shortcode('declension_city', 'get_declension_city');
 
 function get_brand(){
-  return get_blog_details( 1 )->blogname;
+  $brand = is_multisite() ? get_blog_details(1)->blogname :  get_bloginfo();
+  return $brand;
 }
 add_shortcode('brand', 'get_brand');
 // SHORTCODES
@@ -338,7 +338,7 @@ function get_page_type($slug){
 };
 
 function get_city(){
-  if(is_multisite()){
+  if( is_multisite() ){
     $city = (get_current_blog_id() === 1) ? 'Москва' : get_blog_details( get_current_blog_id() )->blogname;
   } else {
     $city = 'Москва'; //что б не выдавало ошибку на локалхосте
@@ -348,15 +348,16 @@ function get_city(){
 
 function get_declension($word,$case) {
   $dir_path = $_SERVER['DOCUMENT_ROOT'].'/wp-content/themes/avtozalog/';
-  $file_path = $dir_path.'/db/sklon.csv';
+  $file_path = $dir_path.'db/sklon.csv';
 
   $data = kama_parse_csv_file($file_path);
 
   $formated_word = 'error...';
 
   foreach($data as $row){
-    if ($row[0] === $word)
-    $formated_word = $row[$case] ? $row[$case] : 'error...';
+    if ($row[0] === $word) {
+      $formated_word = $row[$case] ? $row[$case] : 'error...';
+    }
   }
 
   return $formated_word;
@@ -387,6 +388,7 @@ function get_main_image($slug){
   return get_with_path($img);
 }
 
+
 function get_headlines($post_id,$slug,$section){
 
   $city = get_city();
@@ -399,23 +401,23 @@ function get_headlines($post_id,$slug,$section){
     case 'main_msk':
       $headlines['firstScreen'] = 'Автоломбард под залог ПТС автомобилей в ' . set_nowrap(get_declension($city,1));
       $headlines['types'] = 'Автоломбард под залог любого автомобиля в ' . set_nowrap(get_declension($city,1));
-      $headlines['calc'] = 'Калькулятор автоломбарда '.get_blog_details( 1 )->blogname;
-      $headlines['advantages'] = 'Преимущества автоломбарда под ПТС '.get_blog_details( 1 )->blogname;
+      $headlines['calc'] = 'Калькулятор автоломбарда '.do_shortcode('[brand]');
+      $headlines['advantages'] = 'Преимущества автоломбарда под ПТС '.do_shortcode('[brand]');
       $headlines['big_form'] = 'Заявка на займ в '.set_nowrap(get_declension($city,8)).' филиал';
       $headlines['terms'] = 'Выдаем деньги под залог ПТС авто в городе '.set_nowrap(get_declension($city,0)).' на Новых Условиях';
       $headlines['requirements'] = 'Требования автоломбарда под залог ПТС в Москве '.set_nowrap(get_declension($city,1));
-      $headlines['steps'] = 'Процесс оформления и получения кредита в ломбарде '.get_blog_details( 1 )->blogname;
+      $headlines['steps'] = 'Процесс оформления и получения кредита в ломбарде '.do_shortcode('[brand]');
       $headlines['faq'] = 'Ответы на вопросы';
       break;
     case 'main_sub':
       $headlines['firstScreen'] = 'Автоломбард под залог ПТС автомобилей в ' . set_nowrap(get_declension($city,1));
-      $headlines['advantages'] = 'Преимущества автоломбарда под ПТС авто в '.get_blog_details( 1 )->blogname;
+      $headlines['advantages'] = 'Преимущества автоломбарда под ПТС авто в '.do_shortcode('[brand]');
       $headlines['horisontal_form'] = 'Какую сумму займа вы бы хотели получить';
       $headlines['steps'] = 'Получите деньги в '.set_nowrap(get_declension($city,1)).' за 35 минут';
       $headlines['calc'] = 'Онлайн расчет максимальной суммы и процентов';
       $headlines['requirements'] = 'Забирайте деньги из автоломбарда и пользуйтесь авто';
       $headlines['types'] = 'Получите кредит заложив ПТС любого автомобиля';
-      $headlines['big_form'] = 'Заявка в автоломбард '.get_blog_details( 1 )->blogname.' в '.set_nowrap(get_declension($city,1));
+      $headlines['big_form'] = 'Заявка в автоломбард '.do_shortcode('[brand]').' в '.set_nowrap(get_declension($city,1));
       $headlines['terms'] = 'Условия автоломбарда в '.set_nowrap(get_declension($city,1));
       $headlines['faq'] = 'Ответы на вопросы по услугам автоломбарда в городе '.set_nowrap(get_declension($city,0));
     break;
@@ -424,7 +426,7 @@ function get_headlines($post_id,$slug,$section){
       $headlines['firstScreen'] = 'Займы под залог ПТС автомобилей в ' . set_nowrap(get_declension($city,1));
       $headlines['types'] = 'Кредитные займы под ПТС машин с правом пользования';
       $headlines['calc'] = 'Расчет процентов по сумме займа под ПТС и срокам кредитования';
-      $headlines['advantages'] = 'Преимущества получения денег в '.set_nowrap(get_declension($city,1)).' в '.get_blog_details( 1 )->blogname;
+      $headlines['advantages'] = 'Преимущества получения денег в '.set_nowrap(get_declension($city,1)).' в '.do_shortcode('[brand]');
       $headlines['big_form'] = 'Заявка на оформление займа под залог ПТС в '.set_nowrap(get_declension($city,1));
       $headlines['terms'] = 'Выдаем займы на выгодных условиях';
       $headlines['requirements'] = 'Требования к кредитополучателю';
@@ -433,12 +435,12 @@ function get_headlines($post_id,$slug,$section){
       break;
     case 'zajm_sub':
       $headlines['firstScreen'] = 'Займы под залог ПТС автомобилей в ' . set_nowrap(get_declension($city,1));
-      $headlines['advantages'] = 'Преимущества получения займа в '.get_blog_details( 1 )->blogname;
+      $headlines['advantages'] = 'Преимущества получения займа в '.do_shortcode('[brand]');
       $headlines['horisontal_form'] = 'Какую сумму денег под залог авто ПТС вы хотите?';
       $headlines['steps'] = 'Оформляйте займы под залог авто ПТС в '.set_nowrap(get_declension($city,1)).' круглосуточно';
       $headlines['calc'] = 'Калькулятор займов под залог ПТС';
       $headlines['requirements'] = 'Получите займ заложив ПТС в городе '.set_nowrap(get_declension($city,0));
-      $headlines['big_form'] = 'Заявка в автоломбард '.get_blog_details( 1 )->blogname.' в '.set_nowrap(get_declension($city,1));
+      $headlines['big_form'] = 'Заявка в автоломбард '.do_shortcode('[brand]').' в '.set_nowrap(get_declension($city,1));
       $headlines['terms'] = 'Условия займа под залог ПТС в '.set_nowrap(get_declension($city,1));
       $headlines['faq'] = 'Ответы на вопросы по услугам';
       break;
@@ -447,7 +449,7 @@ function get_headlines($post_id,$slug,$section){
         $headlines['firstScreen'] = 'Кредиты под залог ПТС автомобилей в ' . set_nowrap(get_declension($city,1));
         $headlines['types'] = 'Выдаем деньги на любые цели под залог авто с правом вождения';
         $headlines['calc'] = 'Калькулятор экспресс кредита под ПТС';
-        $headlines['advantages'] = 'Преимущества кредита под ПТС авто в '.get_blog_details( 1 )->blogname.' в '.set_nowrap(get_declension($city,1));
+        $headlines['advantages'] = 'Преимущества кредита под ПТС авто в '.do_shortcode('[brand]').' в '.set_nowrap(get_declension($city,1));
         $headlines['big_form'] = 'Заявка на кредит под залог авто ПТС';
         $headlines['terms'] = 'Выгодно взять кредит под залог авто очень просто';
         $headlines['requirements'] = 'Требования к кредитополучателю';
@@ -461,7 +463,7 @@ function get_headlines($post_id,$slug,$section){
         $headlines['steps'] = 'Оформляйте кредиты под залог авто ПТС в '.set_nowrap(get_declension($city,1)).' круглосуточно';
         $headlines['calc'] = 'Калькулятор кредитования под залог ПТС';
         $headlines['requirements'] = 'Получите деньги заложив ПТС любого автомобиля в городе '.set_nowrap(get_declension($city,0));
-        $headlines['big_form'] = 'Заявка на кредит в автоломбард '.get_blog_details( 1 )->blogname.' в '.set_nowrap(get_declension($city,1));
+        $headlines['big_form'] = 'Заявка на кредит в автоломбард '.do_shortcode('[brand]').' в '.set_nowrap(get_declension($city,1));
         $headlines['terms'] = 'Условия кредитовария под залог ПТС в '.set_nowrap(get_declension($city,1));
         $headlines['faq'] = 'Ответы на вопросы по услугам';
       break;
@@ -470,7 +472,7 @@ function get_headlines($post_id,$slug,$section){
       $headlines['firstScreen'] = 'Кредиты для ИП под залог авто ПТС';
       $headlines['types'] = 'Выдача кредитов для бизнеса под залог коммерческого авто';
       $headlines['calc'] = 'Калькулятор для Юридических лиц и ИП';
-      $headlines['advantages'] = 'Преимущества автоломбарда для юридических лиц «'.get_blog_details( 1 )->blogname.'»';
+      $headlines['advantages'] = 'Преимущества автоломбарда для юридических лиц «'.do_shortcode('[brand]').'»';
       $headlines['big_form'] = 'Заявка на займ';
       $headlines['terms'] = 'Условия кредитования для ИП и Юридических лиц';
       $headlines['requirements'] = 'Требования автоломбарда к юридическим лицам';
@@ -483,7 +485,7 @@ function get_headlines($post_id,$slug,$section){
       $headlines['horisontal_form'] = 'Укажите желаемую сумму под залог ПТС грузовика';
       $headlines['calc'] = 'Расчет условий кредитования в автоломбарде';
       $headlines['requirements'] = 'Чтобы получить займ под залог ПТС грузовой автомобиль';
-      $headlines['big_form'] = 'Заявка в грузовой автоломбард '.get_blog_details( 1 )->blogname;
+      $headlines['big_form'] = 'Заявка в грузовой автоломбард '.do_shortcode('[brand]');
       $headlines['steps'] = 'Алгоритм получения денег под ПТС грузовика';
       $headlines['faq'] = 'Вопросы по кредитам под залог ПТС грузового автомобиля';
       break;
@@ -495,7 +497,7 @@ function get_headlines($post_id,$slug,$section){
       $headlines['requirements'] = 'Требования автоломбарда';
       $headlines['big_form'] = 'Заявка на займ под ПТС спецтехники';
       $headlines['steps'] = 'Как получить займ под залог ПТС спецтехники';
-      $headlines['faq'] = 'Вопросы по кредитованию в автоломбарде '.get_blog_details( 1 )->blogname;
+      $headlines['faq'] = 'Вопросы по кредитованию в автоломбарде '.do_shortcode('[brand]');
       break;
     case 'moto':
       $headlines['firstScreen'] = 'Мотоломбард';
@@ -504,11 +506,11 @@ function get_headlines($post_id,$slug,$section){
       $headlines['calc'] = 'Расчет займа под залог ПТС мотоцикла';
       $headlines['requirements'] = 'Требования мотоломбарда';
       $headlines['big_form'] = 'Заявка на займ под ПТС мотоцикла';
-      $headlines['steps'] = 'Вопросы по кредитованию под залог мотоцикла';
-      $headlines['faq'] = 'Вопросы по кредитованию в автоломбарде '.get_blog_details( 1 )->blogname;
+      $headlines['steps'] = 'Как получить займ под залог ПТС мотоцикла';
+      $headlines['faq'] = 'Вопросы по кредитованию в автоломбарде '.do_shortcode('[brand]');
       break;
     case '24h':
-      $headlines['firstScreen'] = 'Круглосуточный '.get_blog_details( 1 )->blogname;
+      $headlines['firstScreen'] = 'Круглосуточный '.do_shortcode('[brand]');
       $headlines['advantages'] = 'Выгода кредитования в автоломбарде';
       $headlines['horisontal_form'] = 'Укажите желаемую сумму кредитования';
       $headlines['steps'] = 'Как получаются займы под залог ПТС авто';
@@ -535,4 +537,36 @@ function get_headlines($post_id,$slug,$section){
   }
 
   return $headlines[$section];
+}
+
+
+function vichele($word,$slug){
+ 
+  $type = get_page_type($slug);
+
+  $vichele = [];
+
+  $vichele['Автомобиль'] = ['Автомобиль','Мотоцикл','Спецтехника','Грузовик'];
+  $vichele['Авто'] = ['Авто','Мотоцикл','Спецтехника','Грузовик'];
+  $vichele['автомобиль'] = ['автомобиль','мотоцикл','спецтехника','грузовик'];
+  $vichele['авто'] = ['авто','мотоцикл','спецтехника','грузовик'];
+  $vichele['авто_2'] = ['авто','мотоциклом','спецтехникой','грузовиком'];
+  $vichele['автомобиля'] = ['автомобиля','мотоцикла','спецтехники','грузовика'];
+  $vichele['автомобилю'] = ['автомобилю','мотоциклу','спецтехнике','грузовику'];
+
+  switch ($type){
+    case 'spec':
+      $key = 2;
+      break; 
+    case 'moto':
+      $key = 1;
+      break; 
+    case 'truck':
+      $key = 3;
+      break;
+    default:
+      $key = 0;
+  }
+
+  return $vichele[$word][$key];
 }
