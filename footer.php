@@ -61,7 +61,7 @@
           </div>
           <div class="col px-0 mx-auto">
             <p class="phone semibold mb-0 px-0">
-              <a href="tel:88003334554" class="text-main">8 800 333 45 54</a>
+              <a href="tel:<?= get_phone(true); ?>" class="text-main"><?= get_phone(); ?></a>
             </p>
             <p class="h6">Звонок бесплатный</p>
           </div>

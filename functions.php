@@ -900,3 +900,8 @@ function city_address($site_id){
 
 	return $cities[$site_id];
 }
+
+function get_phone($link = false){
+  return ($link === false) ? '8 800 500 61 65' : '88005006165';
+}
+?>

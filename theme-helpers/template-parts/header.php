@@ -30,7 +30,7 @@
                     </li>
                 </ul>
                 <div class="header-phone d-flex flex-column pr-3">
-                    <p class="phone mt-auto mb-1"><a href="tel:88003334050" class="text-main">8 800 333 40 50</a></p>
+                    <p class="phone mt-auto mb-1"><a href="tel:<?= get_phone(true); ?>" class="text-main"><?= get_phone(); ?></a></p>
                     <p class="smaller text-muted mb-auto text-right">Звонок бесплатный</p>
                 </div>
                 <button class="btn btn-outline-main d-none d-xl-block">Заказать звонок</button>
@@ -93,7 +93,7 @@
                         </li>
                     </ul>
                     <div class="header-phone mt-3">
-                        <p class="phone mb-0"><a href="tel:88003334050" class="text-main">8 800 333 40 50</a></p>
+                        <p class="phone mb-0"><a href="tel:<?= get_phone(true); ?>" class="text-main"><?= get_phone(); ?></a></p>
                         <p class="smaller">Звонок бесплатный</p>
                     </div>
                 </div>

@@ -13,7 +13,7 @@
                     <img class="w-100" src="<?= get_with_path('img/hand_bottom.png');?>" alt="">
                 </div>
                 <div class="col-6 offset-md-1">
-                    <p class="h2 semibold mb-0 mt-4"><a href="tel:88003334554" class="text-main">8 800 333 45 54</a>
+                    <p class="h2 semibold mb-0 mt-4"><a href="tel:<?= get_phone(true); ?>" class="text-main"><?= get_phone(); ?></a>
                     </p>
                     <p class="semibold text-muted mb-4">Звонок бесплатный</p>
                     <button class="btn btn-main mb-3">
