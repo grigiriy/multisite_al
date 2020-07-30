@@ -10,7 +10,7 @@
           <div class="col">
             <div class="bd-callout bd-callout-main pl-lg-5 py-2 my-auto">
               <p class="semibold mb-0">Адрес:</p>
-              <p><a href="#" class="smaller text-main text-dashed">Ленинсрадский проспект, 31Ас1</a></p>
+              <p><a href="#" class="smaller text-main text-dashed"><?= city_address(get_current_blog_id()); ?></a></p>
             </div>
           </div>
           <div class="col">
@@ -35,7 +35,7 @@
         <div class="logo text-center">
           <img src="<?= get_with_path('img/logo.png'); ?>" alt="">
         </div>
-        <p class="smaller text-muted mt-3">Автоломбард «Автоломбард АвтоЗалог24» © 2020 год</p>
+        <p class="smaller text-muted mt-3">Автоломбард «Автоломбард <?= do_shortcode('[brand]');?>» © 2020 год</p>
       </div>
       <div class="col-12 col-lg-10 pl-sm-5">
         <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-3 ml-sm-2">
