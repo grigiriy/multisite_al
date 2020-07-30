@@ -64,8 +64,8 @@
                             <p class="subtitle semibold text-nowrap ml-3 mb-0">К автомобилю</p>
                         </div>
                         <ul class="mt-4 pl-3">
-                            <li><?= vichele('Авто',$post->post_name,); ?> в исправном состоянии</li>
-                            <li><?= vichele('Авто',$post->post_name,); ?> не находится в залоге</li>
+                            <li><?= vichele('Авто',$post->post_name); ?> в исправном состоянии</li>
+                            <li><?= vichele('Авто',$post->post_name); ?> не находится в залоге</li>
                             <li>Состоит на учете в ГИБДД</li>
                             <li>Год выпуска не имеет значения</li>
                             <li>Внешний вид не имеет значения</li>

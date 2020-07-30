@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<meta name="yandex-verification" content="635daf591851a6e6" />
-<meta name="google-site-verification" content="o6Vo1e2a89wiG2lfEOh8Q41t9hyYYtqjxJd9TFYM40M" />
 <html>
   <head>
+<meta name="yandex-verification" content="635daf591851a6e6" />
     <meta charset="utf-8" />
     <meta http-equiv="Cache-Control" content="private">
     <meta name="viewport" content="width=device-width, initial-scale=1">

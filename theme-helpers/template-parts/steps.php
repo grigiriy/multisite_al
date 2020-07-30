@@ -48,8 +48,8 @@
                     class="overflow-hidden mb-3 position-relative mr-5 mr-md-3 rounded-xl shadow p-4 bg-white d-flex flex-column">
                     <img class="mt-3" src="<?= get_with_path('img/steps_2.png"');?> alt="">
                     <div class="half-circle-angle"><span class="h1">02</span></div>
-                    <p class="text-nowrap pt-4 semibold subtitle">Оцениваем <?= vichele('автомобиль',$post->post_name,); ?></p>
-                    <p>Приезжаете в офис для оценки и проверки вашего <?= vichele('автомобиля',$post->post_name,); ?></p>
+                    <p class="text-nowrap pt-4 semibold subtitle">Оцениваем <?= vichele('автомобиль',$post->post_name); ?></p>
+                    <p>Приезжаете в офис для оценки и проверки вашего <?= vichele('автомобиля',$post->post_name); ?></p>
                     <div class="mt-auto d-flex">
                         <svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -113,7 +113,7 @@
                     <img class="mt-3" src="<?= get_with_path('img/steps_4.png"');?> alt="">
                     <div class="half-circle-angle"><span class="h1">04</span></div>
                     <p class="text-nowrap pt-4 semibold subtitle">Получаете деньги</p>
-                    <p>Наличными или на карту, а вы продолжаете пользоваться <?= vichele('авто_2',$post->post_name,); ?></p>
+                    <p>Наличными или на карту, а вы продолжаете пользоваться <?= vichele('авто_2',$post->post_name); ?></p>
                     <div class="mt-auto d-flex">
                         <svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
