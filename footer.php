@@ -55,8 +55,8 @@
           </div>
           <div class="col">
             <ul class="list-unstyled">
-              <li><a href="<?= get_home_url().get_current_blog_id() === 1 ? 'avto-zajm-pod-zalog-pts-v-moskve/' : 'zajm-pod-pts/' ;?>">Займ под залог ПТС</a></li>
-              <li><a href="<?= get_home_url().get_current_blog_id() === 1 ? 'avto-kredit-pod-zalog-pts-v-moskve/' : 'kredit-pod-pts/' ;?>">Кредит под залог ПТС</a></li>
+              <li><a href="<?= get_home_url(). (get_current_blog_id() === 1 ? '/avto-zajm-pod-zalog-pts-v-moskve/' : '/zajm-pod-pts/' );?>">Займ под залог ПТС</a></li>
+              <li><a href="<?= get_home_url(). (get_current_blog_id() === 1 ? '/avto-kredit-pod-zalog-pts-v-moskve/' : '/kredit-pod-pts/' );?>">Кредит под залог ПТС</a></li>
             </ul>
           </div>
           <div class="col px-0 mx-auto">
