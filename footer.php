@@ -81,7 +81,7 @@
 </footer>
 
 <?php
-// get_template_part('theme-helpers/template-parts/modal','cities');
+get_template_part('theme-helpers/template-parts/modal','cities');
 get_template_part('theme-helpers/template-parts/modal','form');
 
 // get_template_part('theme-helpers/template-parts/callback');

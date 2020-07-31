@@ -1,11 +1,13 @@
-<div class="modal fade" id="citiesModal" tabindex="-1" role="dialog" aria-labelledby="citiesModal" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content px-3 py-4">
+<div class="modal fade" id="cityModal" tabindex="-1" role="dialog" aria-labelledby="cityModal" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered mt-n5">
+        <div class="modal-content px-4 py-5">
             <div class="modal-body">
-            <div class="d-flex mb-4">
-                <p class="h3  ml-auto">Выбрать город</p>
-                <button type="button" class="ml-auto close align-self-start font-weight-light h1 mt-n3" data-dismiss="modal" aria-label="Close">
-                    <svg version="1.1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+                <div class="mb-2 d-flex">
+                    <div class="mx-auto">
+                        <p class="h2 mt-3">Выбрать город</p>
+                    </div>
+                    <button type="button" class="position-absolute close text-main align-self-baseline" data-dismiss="modal" aria-label="Close">
+                        <svg version="1.1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
                             <!-- Icons made by Freepik (www.flaticon.com/authors/freepik) from Flaticon (www.flaticon.com) -->
                             <g>
                                 <g>
@@ -19,76 +21,30 @@
                         </svg>
                     </button>
                 </div>
-                <?php $cities = get_posts([
-                    'post_type' => 'page',
-                    'numberposts' => '-1',
-                    'orderby' => 'title',
-                    'order' => 'ASC',
-                    'meta_query' => [
-                        [
-                            'key'   => '_wp_page_template', 
-                            'value' => 'main.php'
-                        ],
-                    ]
-                ]);
-                $big_cities = get_posts([
-                    'post_type' => 'page',
-                    'category'    => 2,
-                    'numberposts' => '-1',
-                    'orderby' => 'title',
-                    'order' => 'ASC',
-                    'meta_query' => [
-                        [
-                            'key'   => '_wp_page_template', 
-                            'value' => 'main.php'
-                        ],
-                    ]
-                ]);
-                ?>
                 <div class="cities">
                     <div>
-                    <?php
-                        $letter_pr = '';
-                        foreach ($big_cities as $city){
-                        $letter = mb_substr(get_the_title($city->ID), 0, 1, "UTF-8");
-                        if ($letter_pr !== $letter){
-                        ?>
-                        </div><div><h3 class="mt-2"><?= $letter; ?></h3>
-                        <?php } ?>
-                        <p>
-                            <a href="<?= get_the_permalink($city->ID)?>"><?= get_the_title($city->ID); ?></a>
-                        </p>
-                        <?php
-                        $letter_pr = $letter;
-                        } ?>
-                            <button type="button" class="btn btn-link" onclick="showCities(this)">
-                            Все города
-                        </button>
+                    <?php 
+
+                    global $cities;
+                    $letter_pr = '';
+                    foreach ($cities as $city){
+                        $postfix = $city[1]!==''?'.' : '';
+                        $postfix .= 'autolombard-autozalog.ru/';
+
+                        $letter = mb_substr($city[2], 0, 1, "UTF-8");
+                        if ($letter_pr !== $letter){     
+                    // close and open div to set the wrapper for letter-inner
+                    ?>
+                    </div><div>
+                    <h3 class="mt-2"><?= $letter; ?></h3>
+                    <?php } ?>
+                    <p><a href="https://<?= $city[1] . $postfix; ?>"><?= $city[2]; ?></a></p>
+                    <?php $letter_pr = $letter;} ?>
                     </div>
-                </div>
-                <div class="cities" style="display:none">
-                <div>
-                    <?php
-                        $letter_pr = '';
-                        foreach ($cities as $city){
-                        $letter = mb_substr(get_the_title($city->ID), 0, 1, "UTF-8");
-                        if ($letter_pr !== $letter){
-                        ?>
-                        </div><div><h3 class="mt-2"><?= $letter; ?></h3>
-                        <?php } ?>
-                        <p>
-                            <a href="<?= get_the_permalink($city->ID)?>"><?= get_the_title($city->ID); ?></a>
-                        </p>
-                        <?php
-                        $letter_pr = $letter;
-                        } ?>
-                            <button type="button" class="btn btn-link" onclick="showCities(this)">
-                            Все города
-                        </button>
-                    </div>
-                </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+

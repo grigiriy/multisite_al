@@ -208,3 +208,11 @@ a.btn {
     max-width: 20px;
   }
 }
+.cities {
+  column-gap: 3em;
+  columns: 4 auto;
+  div {
+    display: inline-block;
+    width: 100%;
+  }
+}
