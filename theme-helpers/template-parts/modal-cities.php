@@ -21,10 +21,9 @@
                         </svg>
                     </button>
                 </div>
-                <div class="cities">
+                <div class="cities" style="display:none">
                     <div>
                     <?php 
-
                     global $cities;
                     $letter_pr = '';
                     foreach ($cities as $city){
@@ -42,6 +41,28 @@
                     <?php $letter_pr = $letter;} ?>
                     </div>
                 </div>
+                <div class="cities">
+                    <div>
+                    <?php 
+                    global $cities;
+                    $letter_pr = '';
+                    foreach ($cities as $city){
+                        if($city[3] === '1'){
+                        $postfix = $city[1]!==''?'.' : '';
+                        $postfix .= 'autolombard-autozalog.ru/';
+
+                        $letter = mb_substr($city[2], 0, 1, "UTF-8");
+                        if ($letter_pr !== $letter){     
+                    // close and open div to set the wrapper for letter-inner
+                    ?>
+                    </div><div>
+                    <h3 class="mt-2"><?= $letter; ?></h3>
+                    <?php } ?>
+                    <p><a href="https://<?= $city[1] . $postfix; ?>"><?= $city[2]; ?></a></p>
+                    <?php $letter_pr = $letter; } }?>
+                    </div>
+                </div>
+                <button class="d-block mx-auto mt-3 btn btn-link" onclick="show_all_cities();">Показать все города</button>
             </div>
         </div>
     </div>
