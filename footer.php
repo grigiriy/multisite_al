@@ -35,7 +35,7 @@
         <div class="logo text-center">
           <img src="<?= get_with_path('img/logo.png'); ?>" alt="">
         </div>
-        <p class="smaller text-muted mt-3">Автоломбард «Автоломбард <?= do_shortcode('[brand]');?>» © 2020 год</p>
+        <p class="smaller text-muted mt-3">Автоломбард «<?= do_shortcode('[brand]');?>» © 2020 год</p>
       </div>
       <div class="col-12 col-lg-10 pl-sm-5">
         <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-3 ml-sm-2">
@@ -49,7 +49,7 @@
           <div class="col">
             <ul class="list-unstyled">
               <li><a href="<?= network_home_url();?>kredity-dlya-ip-i-yuridicheskih-lic-pod-zalog-pts/">Автоломбард <span class="text-nowrap">для юр. лиц</span></a></li>
-              <li><a href="<?= network_home_url();?>gruzovyh-avtomobilej/">Грузовой автоломбард</a></li>
+              <li><a href="<?= network_home_url();?>gruzovyh-avtomobilej/">Автоломбард грузовиков</a></li>
               <li><a href="<?= network_home_url();?>spectekhniki/">Автоломбард спецтехники</a></li>
             </ul>
           </div>
