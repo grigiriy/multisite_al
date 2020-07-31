@@ -4,4 +4,6 @@
         <?= apply_filters( 'the_content', wpautop( $text ) ); ?>
     </div>
 </section>
-<?php endif; ?>
+<?php endif;
+set_query_var( 'text', '' );
+?>
