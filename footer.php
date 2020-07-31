@@ -106,6 +106,7 @@ get_template_part('theme-helpers/template-parts/modal','form');
   <script defer="defer" src="<?= get_with_path('js/jquery.min.js');?>"></script>
   <script defer="defer" src="<?= get_with_path('js/bootstrap.bundle.min.js');?>"></script>
   <script defer="defer" src="<?= get_with_path('js/slick.min.js');?>"></script>
+  <script defer="defer" src="<?= get_with_path('js/jquery.maskedinput.js');?>"></script>
   <script defer="defer" src="<?= get_with_path('js/nouislider.min.js');?>"></script>
   <script defer="defer" src="<?= get_with_path('js/calc.js');?>"></script>
   <script defer="defer" src="<?= get_with_path('js/main.min.js');?>"></script>

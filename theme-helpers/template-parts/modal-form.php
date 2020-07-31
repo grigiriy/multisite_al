@@ -22,16 +22,7 @@
                         </svg>
                     </button>
                 </div>
-                <form>
-                    <input type="text" class="form-control my-3" placeholder="Ваше имя">
-                    <input type="text" class="form-control my-3 __phone" placeholder="+7 (___) ___-__-__" name="phone">
-                    <button class="btn btn-main w-100 mb-3" type="submit">
-                        Получить одобрение
-                    </button>
-                    <p class="smaller text-center px-3">
-                        Нажимая на кнопку, вы даете согласие на <a href="/privacy_policy.pdf" class="text-main" download target="_blank">обработку ваших персональных данных</a>
-                    </p>
-                </form>
+            <?= do_shortcode('[contact-form-7 id="5"]'); ?>
             </div>
         </div>
     </div>

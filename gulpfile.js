@@ -13,6 +13,7 @@ const dev = gulp.parallel(pug2html, styles, scripts, script_plugins);
 
 const build = gulp.series(clean, styles, scripts, script_plugins, moveAssets);
 
+module.exports.scripts = gulp.series(scripts);
 module.exports.styles = gulp.series(styles, watch);
 module.exports.start = gulp.series(build, dev, serve);
 module.exports.build = build;
