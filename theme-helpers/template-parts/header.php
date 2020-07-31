@@ -33,7 +33,7 @@
                     <p class="phone mt-auto mb-1"><a href="tel:<?= get_phone(true); ?>" class="text-main"><?= get_phone(); ?></a></p>
                     <p class="smaller text-muted mb-auto text-right">Звонок бесплатный</p>
                 </div>
-                <button class="btn btn-outline-main d-none d-xl-block">Заказать звонок</button>
+                <button class="btn btn-outline-main d-none d-xl-block" data-toggle="modal" data-target="#formModal">Заказать звонок</button>
                 <a class="d-block d-xl-none" href="#">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
