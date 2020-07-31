@@ -1,4 +1,4 @@
-<?php $colored = !is_page_template(['page-second.php','page-third.php']); ?>
+<?php $colored = !is_page_template(['page-second.php']); ?>
 
 <section id="steps" class="row <?= $colored ? 'bg-lightgrey ' : ' '; ?>py-3 mt-5">
     <div class="container mx-auto my-5">
