@@ -127,3 +127,72 @@ function show_all_cities(e) {
 }
 
 $("input[type='tel']").mask('+7(999) 999-9999');
+
+var wpcf7Elm = document.querySelectorAll('.wpcf7');
+
+for (var i = 0; i < wpcf7Elm.length; i++) {
+  wpcf7Elm[i].addEventListener(
+    'wpcf7mailsent',
+    function (event) {
+      ym(65958358, 'reachGoal', 'zayavka');
+      api_push(this);
+    },
+    false
+  );
+}
+
+function api_push(e) {
+  console.log('api push init');
+  let slug = window.location.href;
+
+  let num = $(e).find('div.form_source_id').text();
+  let city = $('footer').data('city');
+
+  let phone = $(e).find('input[name="your_tel"]').val();
+  let name = $(e).find('input[name="your_name"]').val();
+  let model = $(e).find('input[name="your_model"]').val();
+  let year = $(e).find('input[name="your_sum"]').val();
+
+  // calc
+  // let dateto = $(e).find('input[name="calc_term"]').val();
+  // let every = $(e).find('input[name="calc_payment"]').val();
+  // let pocent = $(e).find('input[name="calc_rate_range"]').val();
+  // let total = $(e).find('#calc_payments_sum').text();
+  // let sumcr = $(e).find('input[name="calc_sum"]').val();
+
+  console.log('sumcr', sumcr);
+  console.log('dateto', dateto);
+  console.log('every', every);
+  console.log('pocent', pocent);
+  console.log('total', total);
+  console.log('slug', slug);
+  console.log('num', num);
+  console.log('city', city);
+
+  $.post({
+    url: '/wp-admin/admin-ajax.php',
+    data: {
+      action: 'send_request',
+
+      city: city,
+      dateto: dateto,
+      every: every,
+      pocent: pocent,
+      total: total,
+      sumcr: sumcr,
+      slug: slug,
+      num: num,
+      phone: phone,
+      name: name,
+      model: model,
+      year: year,
+    },
+    success: function (data) {
+      console.log(data);
+    },
+    error: function (errorThrown) {
+      console.log(errorThrown);
+    },
+  });
+  return false;
+}

@@ -2,7 +2,7 @@
     <div class="container-fluid container-lg">
         <div class="row">
             <nav class="navbar d-none d-lg-flex w-100">
-                <div class="logo">
+                <div class="logo" data-city="<?= get_city(); ?>">
                 <a href="/">
                 <img src="<?= get_with_path('img/logo.png');?>" alt="">
                 </a>
