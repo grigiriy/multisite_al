@@ -11,7 +11,7 @@
                     платеж и ставку</p>
             </div>
         </div>
-        <form id="form-calculator" name="summ" action="#" method="POST" class="row mt-5">
+        <div id="form-calculator" class="row mt-5">
             <div class="col-12 col-lg-7 pr-lg-5">
                 <div class="form-group position-relative pt-3 mb-5 mr-lg-4">
                     <label class="subtitle" for="calc_sum">Необходимая сумма</label>
@@ -61,18 +61,9 @@
                     </div>
                 </div>
                 <div class="rounded-xl bg-white px-xl-5 py-3 mt-1 position-relative">
-                    <div class="px-3 __phone __calc_phone">
-                        <input type="text" class="form-control my-3" placeholder="Ваше имя">
-                        <input type="text" class="form-control my-3" placeholder="+7 (___) ___-__-__" name="phone">
-                        <button class="btn btn-main w-100 mb-3" type="submit">
-                            Получить одобрение
-                        </button>
-                        <p class="smaller text-center px-3">
-                            Нажимая на кнопку, вы даете согласие на <a href="/privacy_policy.pdf" class="text-main" download target="_blank">обработку ваших персональных данных</a>
-                        </p>
-                    </div>
+                    <?= do_shortcode('[contact-form-7 id="'.(get_current_blog_id() === 1 ? '42' : '13' ).'" html_class="px-3 __phone __calc_phone"]'); ?>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </section>

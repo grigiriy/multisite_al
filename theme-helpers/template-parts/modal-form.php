@@ -22,7 +22,7 @@
                         </svg>
                     </button>
                 </div>
-            <?= do_shortcode('[contact-form-7 id="5"]'); ?>
+                <?= do_shortcode('[contact-form-7 id="'.(get_current_blog_id() === 1 ? '5' : '12' ).'"]'); ?>
             </div>
         </div>
     </div>
