@@ -1,3 +1,5 @@
+'use strict';
+
 $('#types')
   .find('.slick')
   .slick({
@@ -30,7 +32,6 @@ $('#types')
       },
     ],
   });
-
 $('#advantages')
   .find('.slick')
   .slick({
@@ -55,7 +56,6 @@ $('#advantages')
       },
     ],
   });
-
 $('#steps')
   .find('.slick')
   .slick({
@@ -81,12 +81,16 @@ $('#steps')
   });
 
 function set_calc(e) {
-  let val = $(e).prev().val().replace(/[^\d]/g, '');
+  var val = $(e).prev().val().replace(/[^\d]/g, '');
   $('#calc_sum').val(val);
   document.getElementById('calc_sum_range').noUiSlider.set(val);
   calcResult();
-  $('html,body').animate({ scrollTop: $('#calc').offset().top }, 'slow');
-
+  $('html,body').animate(
+    {
+      scrollTop: $('#calc').offset().top,
+    },
+    'slow'
+  );
   return false;
 }
 
@@ -99,6 +103,7 @@ $('a[href*="#"]')
     if (linktHref[1] === '') {
       return;
     }
+
     var currentUrlRoot = window.location.href.split('#')[0],
       scrollToAnchor = $('#' + linktHref[1]);
     currentUrlRoot = currentUrlRoot.replace(/\/$/, '');
@@ -127,7 +132,6 @@ function show_all_cities(e) {
 }
 
 $("input[type='tel']").mask('+7(999) 999-9999');
-
 var wpcf7Elm = document.querySelectorAll('.wpcf7');
 
 for (var i = 0; i < wpcf7Elm.length; i++) {
@@ -143,22 +147,27 @@ for (var i = 0; i < wpcf7Elm.length; i++) {
 
 function api_push(e) {
   console.log('api push init');
-  let slug = window.location.href;
+  var slug = window.location.href;
+  var num = $(e).find('div.form_source_id').text();
+  var city = $('header').find('.logo').data('city');
+  var phone = $(e).find('input[name="your_phone"]').val();
+  var name = $(e).find('input[name="your_name"]').val();
+  var model = $(e).find('input[name="your_model"]').val();
+  var year = $(e).find('input[name="your_sum"]').val(); // calc
 
-  let num = $(e).find('div.form_source_id').text();
-  let city = $('footer').data('city');
-
-  let phone = $(e).find('input[name="your_tel"]').val();
-  let name = $(e).find('input[name="your_name"]').val();
-  let model = $(e).find('input[name="your_model"]').val();
-  let year = $(e).find('input[name="your_sum"]').val();
-
-  // calc
-  // let dateto = $(e).find('input[name="calc_term"]').val();
-  // let every = $(e).find('input[name="calc_payment"]').val();
-  // let pocent = $(e).find('input[name="calc_rate_range"]').val();
-  // let total = $(e).find('#calc_payments_sum').text();
-  // let sumcr = $(e).find('input[name="calc_sum"]').val();
+  if ($(e).hasClass('__calc_phone')) {
+    var dateto = $('#calc').find('input[name="calc_term"]').val();
+    var every = $('#calc').find('input[name="calc_payment"]').val();
+    var pocent = $('#calc').find('input[name="calc_rate_range"]').val();
+    var total = $('#calc').find('#calc_payments_sum').text();
+    var sumcr = $('#calc').find('input[name="calc_sum"]').val();
+  } else {
+    var dateto = '';
+    var every = '';
+    var pocent = '';
+    var total = '';
+    var sumcr = '';
+  }
 
   console.log('sumcr', sumcr);
   console.log('dateto', dateto);
@@ -168,12 +177,10 @@ function api_push(e) {
   console.log('slug', slug);
   console.log('num', num);
   console.log('city', city);
-
   $.post({
     url: '/wp-admin/admin-ajax.php',
     data: {
       action: 'send_request',
-
       city: city,
       dateto: dateto,
       every: every,
@@ -187,10 +194,10 @@ function api_push(e) {
       model: model,
       year: year,
     },
-    success: function (data) {
+    success: function success(data) {
       console.log(data);
     },
-    error: function (errorThrown) {
+    error: function error(errorThrown) {
       console.log(errorThrown);
     },
   });
