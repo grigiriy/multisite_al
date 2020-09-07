@@ -13,7 +13,10 @@
             <div class="col d-flex">
                 <div
                     class="overflow-hidden mb-3 position-relative mr-5 mr-md-3 rounded-xl shadow p-4 bg-white d-flex flex-column">
-                    <img class="mt-3" src="<?= get_with_path('img/steps_1.png"');?> alt="">
+                    <picture>
+                        <source srcset="<?= get_with_path('img/steps_1.webp'); ?>" type="image/webp">
+                        <img class="mt-3" src="<?= get_with_path('img/steps_1.png');?>" alt="">
+                    </picture>
                     <div class="half-circle-angle"><span class="h1">01</span></div>
                     <p class="text-nowrap pt-4 semibold subtitle">Оставляете заявку</p>
                     <p>Позвоните или заполните форму на сайте и получите одобрение</p>
@@ -46,7 +49,10 @@
             <div class="col d-flex">
                 <div
                     class="overflow-hidden mb-3 position-relative mr-5 mr-md-3 rounded-xl shadow p-4 bg-white d-flex flex-column">
-                    <img class="mt-3" src="<?= get_with_path('img/steps_2.png"');?> alt="">
+                    <picture>
+                        <source srcset="<?= get_with_path('img/steps_2.webp'); ?>" type="image/webp">
+                        <img class="mt-3" src="<?= get_with_path('img/steps_2.png');?>" alt="">
+                    </picture>
                     <div class="half-circle-angle"><span class="h1">02</span></div>
                     <p class="text-nowrap pt-4 semibold subtitle">Оцениваем <?= vichele('автомобиль',$post->post_name); ?></p>
                     <p>Приезжаете в офис для оценки и проверки вашего <?= vichele('автомобиля',$post->post_name); ?></p>
@@ -78,7 +84,10 @@
             <div class="col d-flex">
                 <div
                     class="overflow-hidden mb-3 position-relative mr-5 mr-md-3 rounded-xl shadow p-4 bg-white d-flex flex-column">
-                    <img class="mt-3" src="<?= get_with_path('img/steps_3.png"');?> alt="">
+                    <picture>
+                        <source srcset="<?= get_with_path('img/steps_3.webp'); ?>" type="image/webp">
+                        <img class="mt-3" src="<?= get_with_path('img/steps_3.png');?>" alt="">
+                    </picture>
                     <div class="half-circle-angle"><span class="h1">03</span></div>
                     <p class="text-nowrap pt-4 semibold subtitle">Заключаем договор</p>
                     <p>Мы оформляем с вами договор займа и залога </p>
@@ -110,7 +119,10 @@
             <div class="col d-flex">
                 <div
                     class="overflow-hidden mb-3 position-relative mr-5 mr-md-3 rounded-xl shadow p-4 bg-white d-flex flex-column">
-                    <img class="mt-3" src="<?= get_with_path('img/steps_4.png"');?> alt="">
+                    <picture>
+                        <source srcset="<?= get_with_path('img/steps_4.webp'); ?>" type="image/webp">
+                        <img class="mt-3" src="<?= get_with_path('img/steps_4.png');?>" alt="">
+                    </picture>
                     <div class="half-circle-angle"><span class="h1">04</span></div>
                     <p class="text-nowrap pt-4 semibold subtitle">Получаете деньги</p>
                     <p>Наличными или на карту, а вы продолжаете пользоваться <?= vichele('авто_2',$post->post_name); ?></p>

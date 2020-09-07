@@ -10,7 +10,10 @@
             </div>
             <div class="row bg-white shadow-top-0">
                 <div class="col-6 col-md-5 d-flex px-0">
+                <picture>
+                    <source srcset="<?= get_with_path('img/hand_bottom.webp'); ?>" type="image/webp">
                     <img class="w-100" src="<?= get_with_path('img/hand_bottom.png');?>" alt="">
+                </picture>
                 </div>
                 <div class="col-6 offset-md-1">
                     <p class="h2 semibold mb-0 mt-4"><a href="tel:<?= get_phone(true); ?>" class="text-main"><?= get_phone(); ?></a>

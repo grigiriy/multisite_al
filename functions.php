@@ -374,19 +374,19 @@ function get_main_image($slug){
 
   switch ($type) {
     case 'truck':
-        $img = 'img/truck.png';
+        $img = 'img/truck';
         break;
     case 'moto':
-        $img = 'img/moto.png';
+        $img = 'img/moto';
         break;
     case 'spec':
-      $img = 'img/spec.png';
+      $img = 'img/spec';
         break;
     case 'yur':
-        $img = 'img/business.png';
+        $img = 'img/business';
         break;
     default:
-      $img = 'img/car.png';
+      $img = 'img/car';
   }
   return get_with_path($img);
 }
@@ -907,3 +907,10 @@ function city_address($site_id){
 function get_phone($link = false){
   return ($link === false) ? '8 800 500 61 65' : '88005006165';
 }
+
+
+//Disable gutenberg style in Front
+function wps_deregister_styles() {
+  wp_dequeue_style( 'wp-block-library' );
+}
+add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );

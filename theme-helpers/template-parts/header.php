@@ -4,7 +4,10 @@
             <nav class="navbar d-none d-lg-flex w-100">
                 <div class="logo" data-city="<?= get_city(); ?>">
                 <a href="/">
-                <img src="<?= get_with_path('img/logo.png');?>" alt="">
+                    <picture>
+                        <source srcset="<?= get_with_path('img/logo.webp'); ?>" type="image/webp">
+                        <img src="<?= get_with_path('img/logo.png');?>" alt="">
+                    </picture>
                 </a>
                 </div>
                 <button class="text-main city-btn btn btn-link" data-toggle="modal" data-target="#cityModal">
@@ -58,7 +61,10 @@
                     </svg>
                 </button>
                 <div class="logo">
-                    <img src="<?= get_with_path('img/logo.png');?>" alt="">
+                    <picture>
+                        <source srcset="<?= get_with_path('img/logo.webp'); ?>" type="image/webp">
+                        <img src="<?= get_with_path('img/logo.png');?>" alt="">
+                    </picture>
                 </div>
                 <a href="#">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">

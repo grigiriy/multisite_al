@@ -33,7 +33,10 @@
     <div class="row border-bottom pt-5 pb-4 mx-0">
       <div class="col-12 col-lg-2 px-0">
         <div class="logo text-center">
+        <picture>
+          <source srcset="<?= get_with_path('img/logo.webp'); ?>" type="image/webp">
           <img src="<?= get_with_path('img/logo.png'); ?>" alt="">
+        </picture>
         </div>
         <p class="smaller text-muted mt-3">Автоломбард «<?= do_shortcode('[brand]');?>» © 2020 год</p>
       </div>

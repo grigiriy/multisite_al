@@ -106,7 +106,10 @@
                 </div>
             </div>
             <div class="col-4 col-md-6 d-flex d-lg-block">
-                <img class="mb-md-auto mt-lg-0 mb-5 mt-auto" src="<?= get_main_image($post->post_name); ?>" alt="">
+                <picture>
+                    <source srcset="<?= get_main_image($post->post_name); ?>.webp" type="image/webp">
+                    <img class="mb-md-auto mt-lg-0 mb-5 mt-auto" src="<?= get_main_image($post->post_name);?>.png" alt="">
+                </picture>
             </div>
             <div class="col-12 d-flex d-lg-none mb-5">
                 <button class="btn btn-main w-100 mt-3" data-toggle="modal" data-target="#formModal">Отправить заявку</button>

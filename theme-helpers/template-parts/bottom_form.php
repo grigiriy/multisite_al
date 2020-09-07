@@ -17,7 +17,10 @@
             </div>
             <div class="row bg-white pt-xl-4 overflow-hidden pb-3">
                 <div class="col-12 col-sm-5 order-sm-1 order-2 pb-5 pb-sm-0">
-                    <img src="<?= get_with_path('img/car_bottom.png'); ?>" alt="" class="mw-100">
+                    <picture>
+                        <source srcset="<?= get_with_path('img/car_bottom.webp'); ?>" type="image/webp">
+                        <img class="mw-100" src="<?= get_with_path('img/car_bottom.png');?>" alt="">
+                    </picture>
                 </div>
                 <div class="col-12 col-sm-7 order-sm-2 order-1">
                 <?= do_shortcode('[contact-form-7 id="'.(get_current_blog_id() === 1 ? '40' : '15' ).'"]'); ?>
