@@ -34,6 +34,8 @@ get_template_part('theme-helpers/template-parts/bottom_cta');
 
 get_template_part('theme-helpers/template-parts/bottom_form');
 
+get_template_part('theme-helpers/template-parts/bot_hunter');
+
 endwhile;
 get_footer();
 ?>

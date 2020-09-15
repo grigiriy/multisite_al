@@ -21,7 +21,7 @@ const build = gulp.series(
   moveAssets
 );
 
-module.exports.scripts = gulp.series(scripts);
+module.exports.scripts = gulp.series(scripts, script_plugins);
 module.exports.styles = gulp.series(clean, styles, images, moveAssets, watch);
 module.exports.start = gulp.series(build, dev, serve);
 module.exports.build = build;

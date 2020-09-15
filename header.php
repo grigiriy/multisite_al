@@ -23,7 +23,10 @@
   <noscript><div><img src="https://mc.yandex.ru/watch/65958358" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
   </head>
-  <?php $bodyClass = is_front_page( $post->ID ) ? 'main' : '' ?>
+  <?php $bodyClass = is_front_page( $post->ID ) ? 'main' : '';
+  
+  check_bot();
+  ?>
 
 
 <!-- theme styles -->

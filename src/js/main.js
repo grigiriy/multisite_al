@@ -1,5 +1,41 @@
 'use strict';
 
+$('#bot_hunter')
+  .find('.slick')
+  .slick({
+    dots: false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    mobileFirst: true,
+    slidesToScroll: 1,
+    arrows: true,
+    centerMode: true,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+          centerMode: false,
+        },
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 3,
+          centerMode: false,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          initialSlide: 1,
+        },
+      },
+    ],
+  });
+
 $('#types')
   .find('.slick')
   .slick({
