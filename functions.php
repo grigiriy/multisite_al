@@ -916,6 +916,37 @@ function wps_deregister_styles() {
 add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );
 
 
-function check_bot($post_id){
-  return $post_id;
+
+
+
+function set_bot($post_id,$bot){
+  carbon_set_post_meta($post_id,'check_'.$bot,true);
+}
+
+function check_bot($post_id = 0){
+  $check_status = [
+    'ya'=>carbon_get_post_meta($post_id,'check_ya'),
+    'go'=>carbon_get_post_meta($post_id,'check_go')
+  ];
+
+  $ya_bot = 'Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)';
+  $go_bots = [
+    'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
+    'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Googlebot/2.1; +http://www.google.com/bot.html) Chrome/W.X.Y.Z‡ Safari/537.36',
+    'Googlebot/2.1 (+http://www.google.com/bot.html)',
+    'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z‡ Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+  ];
+  $ua = $_SERVER['HTTP_USER_AGENT'];
+
+
+  if(!$check_status['ya']){
+    if($ua = $ya_bot){
+      set_bot($post_id,'ya');
+    }
+  }
+  if(!$check_status['go']){
+    if(in_array($ua, $go_bots)){
+      set_bot($post_id,'go');
+    }
+  }
 }

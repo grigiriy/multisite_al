@@ -47,6 +47,8 @@ Container::make( 'post_meta', 'Тексты' )
         ->add_fields( [
             Field::make( 'text', 'subtitle', 'Вопрос (h3)' ),
             Field::make( 'rich_text', 'text', 'Ответ' ),
-        ])
+        ]),
+        Field::make( 'checkbox', 'check_ya', 'яша' ),
+        Field::make( 'checkbox', 'check_go', 'гуголь' )
     ]);
 ?>

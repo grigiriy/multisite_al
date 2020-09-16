@@ -22,15 +22,17 @@
   </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/65958358" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
+
+  <link rel="stylesheet" href="<?= get_with_path('css/main.css');?>">
+
   </head>
   <?php $bodyClass = is_front_page( $post->ID ) ? 'main' : '';
   
-  check_bot();
+  check_bot($post->ID);
+    print_r($_SERVER['HTTP_USER_AGENT']);
   ?>
 
 
-<!-- theme styles -->
-<link rel="stylesheet" href="<?= get_with_path('css/main.css');?>">
 
 <body>
 <div class="app container-fluid">
