@@ -5,6 +5,9 @@
     <meta charset="utf-8" />
     <meta http-equiv="Cache-Control" content="private">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="120x120" href="/favicon.png" type="image/png">
+
     <title><?= wp_kses(apply_filters( 'the_content', get_post_field('_genesis_title') ),'strip'); ?></title>
   	<?php wp_head(); ?>
   <!-- Yandex.Metrika counter -->

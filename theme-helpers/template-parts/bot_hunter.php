@@ -17,9 +17,17 @@ $_cities = array_slice($cities,$offset,10);
     </div>
     <div class="slick row">
     <?php foreach($_cities as $city){
+        if($post->post_name === 'avto-zajm-pod-zalog-pts-v-moskve'){
+            $tail = $city[1]!=='' ? 'zajm-pod-pts' : $post->post_name;
+        } else if($post->post_name === 'avto-zajm-pod-zalog-pts-v-moskve'){
+            $tail = $city[1]!=='' ? 'zajm-pod-pts' : $post->post_name;
+        } else {
+            $tail = $post->post_name;
+        }
+
         $prefix = $city[1]!==''?'.' : '';
         $prefix .= 'autolombard-autozalog.ru/';
-        $postfix = $post->post_name==='main' ? '' : $post->post_name;
+        $postfix = $post->post_name==='main' ? '' : $tail;
     ?>
         <div class="col px-2 py-4">
             <div class="shadow p-3 overflow-hidden position-relative">
