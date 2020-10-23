@@ -1,10 +1,7 @@
 <?php
 global $cities;
 
-$start_date = date_create('2020-09-16');
-$current_date = date_create();
-$date_diff = date_diff($start_date,$current_date);
-$offset = 10*($date_diff->format('%a'));
+$offset = (array_search(get_current_blog_id(), array_keys($cities))+1);
 $_cities = array_slice($cities,$offset,10);
 ?>
 
