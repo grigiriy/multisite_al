@@ -47,4 +47,42 @@
   .slick-prev::before {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' class='bi bi-arrow-left' fill='%2300b4e3' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' d='M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z'/%3E%3C/svg%3E");
   }
+
+  @media(max-width:768px){
+    .slick-next {
+      right: 5%;
+    }
+    .slick-prev {
+      left: 5%;
+    }
+    .h4{
+      font-size: 1rem;
+      white-space: normal !important;
+    
+    }
+    .col{
+      .ml-max{
+        margin-left: 30px;
+        line-height: 20px;
+        text-align: center;
+        width: calc(100% - 30px);
+        min-width: 100px;
+      }
+      .half-circle-left{
+        line-height: 25px;
+        margin-left: -30px;
+        padding: 20px;
+        top: -7px;
+      }
+    }
+    .shadow{
+      max-height: 52px;
+      padding: 0 1rem !important;
+      min-height: 52px;
+      display: flex;
+      a{
+        align-self:center;
+      }
+    }
+  }
 }
