@@ -148,22 +148,22 @@ $fields = [
   'message' => ''
 ];
 
-$curl = curl_init(); 
-curl_setopt_array($curl,
-array(CURLOPT_SSL_VERIFYPEER => 0,
-    CURLOPT_RETURNTRANSFER => 1,
-    CURLOPT_USERAGENT => $userAgent,
-    CURLOPT_REFERER => $_SERVER['REQUEST_URI'],
-    CURLOPT_URL => 'http://crm.avtolombard-credit.ru/api/send/lead',
-    CURLOPT_ENCODING => "utf-8",
-    CURLOPT_POST => true,
-    CURLOPT_CUSTOMREQUEST => "POST",
-    CURLOPT_POSTFIELDS => $fields));
+// $curl = curl_init(); 
+// curl_setopt_array($curl,
+// array(CURLOPT_SSL_VERIFYPEER => 0,
+//     CURLOPT_RETURNTRANSFER => 1,
+//     CURLOPT_USERAGENT => $userAgent,
+//     CURLOPT_REFERER => $_SERVER['REQUEST_URI'],
+//     CURLOPT_URL => 'http://crm.avtolombard-credit.ru/api/send/lead',
+//     CURLOPT_ENCODING => "utf-8",
+//     CURLOPT_POST => true,
+//     CURLOPT_CUSTOMREQUEST => "POST",
+//     CURLOPT_POSTFIELDS => $fields));
 
-$result = curl_exec($curl);
-curl_close($curl);
+// $result = curl_exec($curl);
+// curl_close($curl);
 
-print_r($result);
+// print_r($result);
 }
 
 
