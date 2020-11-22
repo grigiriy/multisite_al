@@ -231,7 +231,7 @@ function api_push(e) {
       year: year,
     },
     success: function success(data) {
-      console.log(data);
+      console.log('good', data);
     },
     error: function error(errorThrown) {
       console.log(errorThrown);
