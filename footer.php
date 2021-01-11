@@ -33,12 +33,12 @@
     <div class="row border-bottom pt-5 pb-4 mx-0">
       <div class="col-12 col-lg-2 px-0">
         <div class="logo text-center">
-        <picture>
-          <source srcset="<?= get_with_path('img/logo.webp'); ?>" type="image/webp">
-          <img src="<?= get_with_path('img/logo.png'); ?>" alt="">
-        </picture>
+          <picture>
+            <source srcset="<?= get_with_path('img/logo.webp'); ?>" type="image/webp">
+            <img src="<?= get_with_path('img/logo.png'); ?>" alt="">
+          </picture>
         </div>
-        <p class="smaller text-muted mt-3">Автоломбард «<?= do_shortcode('[brand]');?>» © 2020 год</p>
+        <p class="smaller text-muted mt-3">Автоломбард «<?= do_shortcode('[brand]');?>» © <?= date ( 'Y' ); ?> год</p>
       </div>
       <div class="col-12 col-lg-10 pl-sm-5">
         <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-3 ml-sm-2">
@@ -60,6 +60,8 @@
             <ul class="list-unstyled">
               <li><a href="<?= get_home_url(). (get_current_blog_id() === 1 ? '/avto-zajm-pod-zalog-pts-v-moskve/' : '/zajm-pod-pts/' );?>">Займ под залог ПТС</a></li>
               <li><a href="<?= get_home_url(). (get_current_blog_id() === 1 ? '/avto-kredit-pod-zalog-pts-v-moskve/' : '/kredit-pod-pts/' );?>">Кредит под залог ПТС</a></li>
+              <li><a href="<?= get_home_url(). (get_current_blog_id() === 1 ? '/avto-kredit-pod-zalog-pts-v-moskve/' : '/about/' );?>">О компании</a></li>
+              <li><a href="<?= get_home_url(). (get_current_blog_id() === 1 ? '/avto-kredit-pod-zalog-pts-v-moskve/' : '/contacts/' );?>">Контакты</a></li>
             </ul>
           </div>
           <div class="col px-0 mx-auto">
@@ -73,7 +75,7 @@
     </div>
     <div class="row mx-0">
       <p class="col-12 text-center text-muted smaller pt-3">
-        Информация на сайте не является публичной офертой. Сервис АвтоЗалог24» оказывает содействие в подборе
+        Информация на сайте не является публичной офертой. Сервис «<?= do_shortcode(['brand']); ?>» оказывает содействие в подборе
         финансовых услуг компаний-партнеров и не является финансовым учреждением, банком, микрофинансовой
         организацией, лизинговой компанией, или ломбардом. Работа сайта autolombard-autozalog.ru не связана с
         осуществлением инвестиционной деятельности. Дополнительные и скрытые комиссии не взимаются. Все
