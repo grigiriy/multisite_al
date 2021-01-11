@@ -1,6 +1,6 @@
 <?php
 
-define('STATIC_FILES_BUILD_VERSION', '2.21');
+define('STATIC_FILES_BUILD_VERSION', '2.22');
 
 //deregister unnessosary scripts
 function my_dequeue_scripts()
@@ -560,12 +560,12 @@ function get_headlines($post_id, $slug, $section)
 
     case 'abt':
       $headlines['firstScreen'] = 'О компании';
-      $headlines['big_form'] = 'Заявка а автоломбарде ' . do_shortcode('[brand]');
+      $headlines['big_form'] = 'Отправить заявку в автоломбард ' . do_shortcode('[brand]');
       break;
 
     case 'cnt':
       $headlines['firstScreen'] = 'Контакты автоломбарда';
-      $headlines['big_form'] = 'Заявка а автоломбарде ' . do_shortcode('[brand]');
+      $headlines['big_form'] = 'Отправить заявку в автоломбард ' . do_shortcode('[brand]');
       break;
 
     default:

@@ -60,8 +60,8 @@
             <ul class="list-unstyled">
               <li><a href="<?= get_home_url(). (get_current_blog_id() === 1 ? '/avto-zajm-pod-zalog-pts-v-moskve/' : '/zajm-pod-pts/' );?>">Займ под залог ПТС</a></li>
               <li><a href="<?= get_home_url(). (get_current_blog_id() === 1 ? '/avto-kredit-pod-zalog-pts-v-moskve/' : '/kredit-pod-pts/' );?>">Кредит под залог ПТС</a></li>
-              <li><a href="<?= get_home_url(). (get_current_blog_id() === 1 ? '/avto-kredit-pod-zalog-pts-v-moskve/' : '/about/' );?>">О компании</a></li>
-              <li><a href="<?= get_home_url(). (get_current_blog_id() === 1 ? '/avto-kredit-pod-zalog-pts-v-moskve/' : '/contacts/' );?>">Контакты</a></li>
+              <li><a href="/about/">О компании</a></li>
+              <li><a href="/contacts/">Контакты</a></li>
             </ul>
           </div>
           <div class="col px-0 mx-auto">
@@ -75,7 +75,7 @@
     </div>
     <div class="row mx-0">
       <p class="col-12 text-center text-muted smaller pt-3">
-        Информация на сайте не является публичной офертой. Сервис «<?= do_shortcode(['brand']); ?>» оказывает содействие в подборе
+        Информация на сайте не является публичной офертой. Сервис «<?= do_shortcode('[brand]');?>» оказывает содействие в подборе
         финансовых услуг компаний-партнеров и не является финансовым учреждением, банком, микрофинансовой
         организацией, лизинговой компанией, или ломбардом. Работа сайта autolombard-autozalog.ru не связана с
         осуществлением инвестиционной деятельности. Дополнительные и скрытые комиссии не взимаются. Все

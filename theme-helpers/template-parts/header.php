@@ -26,10 +26,10 @@
                         <a class="nav-link" href="#big_form">Заявка</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#faq">F.A.Q.</a>
+                        <a class="nav-link" href="/about/">О компании</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= network_home_url();?>/kredity-dlya-ip-i-yuridicheskih-lic-pod-zalog-pts/">Для Юр. Лиц.</a>
+                        <a class="nav-link" href="/contacts/">Контакты</a>
                     </li>
                 </ul>
                 <div class="header-phone d-flex flex-column pr-3">
@@ -92,10 +92,10 @@
                             <a class="nav-link" href="#big_form">Заявка</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#faq">F.A.Q.</a>
+                            <a href="/about/">О компании</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= network_home_url();?>/kredity-dlya-ip-i-yuridicheskih-lic-pod-zalog-pts/">Для Юр. Лиц.</a>
+                            <a href="/contacts/">Контакты</a>
                         </li>
                     </ul>
                     <div class="header-phone mt-3">

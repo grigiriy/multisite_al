@@ -6,7 +6,7 @@
     ),
     #f1f7f8;
   @include media-tablet_portrait-max {
-    p {
+    p:not(.subtitle) {
       font-size: 0.8rem;
       line-height: 1.4rem;
     }
